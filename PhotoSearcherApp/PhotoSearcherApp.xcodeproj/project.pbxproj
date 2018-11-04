@@ -12,9 +12,12 @@
 		3676E182218ECFBE005B530B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3676E180218ECFBE005B530B /* Main.storyboard */; };
 		3676E184218ECFBF005B530B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3676E183218ECFBF005B530B /* Assets.xcassets */; };
 		3676E187218ECFBF005B530B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3676E185218ECFBF005B530B /* LaunchScreen.storyboard */; };
+		CFC14A6AAB8448840CD20B63 /* Pods_PhotoSearcherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166B141B7B2A2C4DDE723DF5 /* Pods_PhotoSearcherApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0214ADF4836670695E1BA812 /* Pods-PhotoSearcherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoSearcherApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoSearcherApp/Pods-PhotoSearcherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		166B141B7B2A2C4DDE723DF5 /* Pods_PhotoSearcherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoSearcherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3676E179218ECFBE005B530B /* PhotoSearcherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearcherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3676E17C218ECFBE005B530B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3676E17E218ECFBE005B530B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		3676E183218ECFBF005B530B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3676E186218ECFBF005B530B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3676E188218ECFBF005B530B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D0C8083CE12B6990549740 /* Pods-PhotoSearcherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoSearcherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoSearcherApp/Pods-PhotoSearcherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC14A6AAB8448840CD20B63 /* Pods_PhotoSearcherApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FC9EAF1BC47D8A672481F9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				166B141B7B2A2C4DDE723DF5 /* Pods_PhotoSearcherApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3676E170218ECFBE005B530B = {
 			isa = PBXGroup;
 			children = (
 				3676E17B218ECFBE005B530B /* PhotoSearcherApp */,
 				3676E17A218ECFBE005B530B /* Products */,
+				C1EFEB731894C4959C571CDF /* Pods */,
+				2FC9EAF1BC47D8A672481F9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = PhotoSearcherApp;
 			sourceTree = "<group>";
 		};
+		C1EFEB731894C4959C571CDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0214ADF4836670695E1BA812 /* Pods-PhotoSearcherApp.debug.xcconfig */,
+				84D0C8083CE12B6990549740 /* Pods-PhotoSearcherApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3676E18B218ECFBF005B530B /* Build configuration list for PBXNativeTarget "PhotoSearcherApp" */;
 			buildPhases = (
+				17927C47F405D6640C159383 /* [CP] Check Pods Manifest.lock */,
 				3676E175218ECFBE005B530B /* Sources */,
 				3676E176218ECFBE005B530B /* Frameworks */,
 				3676E177218ECFBE005B530B /* Resources */,
+				210792EF281DC505DA7DDEE2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17927C47F405D6640C159383 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoSearcherApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		210792EF281DC505DA7DDEE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhotoSearcherApp/Pods-PhotoSearcherApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoSearcherApp/Pods-PhotoSearcherApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3676E175218ECFBE005B530B /* Sources */ = {
@@ -280,6 +347,7 @@
 		};
 		3676E18C218ECFBF005B530B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0214ADF4836670695E1BA812 /* Pods-PhotoSearcherApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +365,7 @@
 		};
 		3676E18D218ECFBF005B530B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84D0C8083CE12B6990549740 /* Pods-PhotoSearcherApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
