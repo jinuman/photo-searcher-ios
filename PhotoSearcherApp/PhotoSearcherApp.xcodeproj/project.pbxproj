@@ -13,6 +13,7 @@
 		3676E184218ECFBF005B530B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3676E183218ECFBF005B530B /* Assets.xcassets */; };
 		3676E187218ECFBF005B530B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3676E185218ECFBF005B530B /* LaunchScreen.storyboard */; };
 		3676E191218F0D8C005B530B /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676E190218F0D8C005B530B /* SearchCollectionViewCell.swift */; };
+		3676E193218F16EB005B530B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3676E192218F16EB005B530B /* DetailViewController.swift */; };
 		CFC14A6AAB8448840CD20B63 /* Pods_PhotoSearcherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166B141B7B2A2C4DDE723DF5 /* Pods_PhotoSearcherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		3676E186218ECFBF005B530B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3676E188218ECFBF005B530B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3676E190218F0D8C005B530B /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		3676E192218F16EB005B530B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		84D0C8083CE12B6990549740 /* Pods-PhotoSearcherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoSearcherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoSearcherApp/Pods-PhotoSearcherApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,9 +76,10 @@
 				3676E17C218ECFBE005B530B /* AppDelegate.swift */,
 				3676E17E218ECFBE005B530B /* SearchViewController.swift */,
 				3676E190218F0D8C005B530B /* SearchCollectionViewCell.swift */,
+				3676E192218F16EB005B530B /* DetailViewController.swift */,
 				3676E180218ECFBE005B530B /* Main.storyboard */,
-				3676E183218ECFBF005B530B /* Assets.xcassets */,
 				3676E185218ECFBF005B530B /* LaunchScreen.storyboard */,
+				3676E183218ECFBF005B530B /* Assets.xcassets */,
 				3676E188218ECFBF005B530B /* Info.plist */,
 			);
 			path = PhotoSearcherApp;
@@ -208,6 +211,7 @@
 				3676E17F218ECFBE005B530B /* SearchViewController.swift in Sources */,
 				3676E17D218ECFBE005B530B /* AppDelegate.swift in Sources */,
 				3676E191218F0D8C005B530B /* SearchCollectionViewCell.swift in Sources */,
+				3676E193218F16EB005B530B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

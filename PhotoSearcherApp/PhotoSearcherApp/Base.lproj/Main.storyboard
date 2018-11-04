@@ -67,12 +67,12 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XuP-74-Rnj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4WY-8H-f2i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XuP-74-Rnj" secondAttribute="trailing" id="4WY-8H-f2i"/>
                             <constraint firstItem="XuP-74-Rnj" firstAttribute="top" secondItem="gjl-S2-7Nh" secondAttribute="bottom" id="9HB-I2-gif"/>
                             <constraint firstItem="gjl-S2-7Nh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DBL-PG-3Eq"/>
                             <constraint firstItem="gjl-S2-7Nh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NWW-Ov-7OJ"/>
                             <constraint firstItem="gjl-S2-7Nh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Onm-Pf-Eqh"/>
-                            <constraint firstItem="XuP-74-Rnj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eFb-OF-zss"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XuP-74-Rnj" secondAttribute="bottom" id="eFb-OF-zss"/>
                             <constraint firstItem="XuP-74-Rnj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iI6-S5-Hca"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -81,11 +81,64 @@
                     <connections>
                         <outlet property="collectionView" destination="XuP-74-Rnj" id="oPc-ZF-juM"/>
                         <outlet property="searchBar" destination="gjl-S2-7Nh" id="jj0-X2-ef3"/>
+                        <segue destination="PTr-gE-XZN" kind="show" identifier="showPhoto" id="tpH-1s-v5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="712.79999999999995" y="133.5832083958021"/>
+        </scene>
+        <!--상세-->
+        <scene sceneID="W5v-IC-ZQ8">
+            <objects>
+                <viewController id="PTr-gE-XZN" customClass="DetailViewController" customModule="PhotoSearcherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aKo-ga-vf9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lun-7p-RDM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beL-ql-52a">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="beL-ql-52a" secondAttribute="trailing" id="G5n-uw-g1L"/>
+                                    <constraint firstItem="beL-ql-52a" firstAttribute="leading" secondItem="Lun-7p-RDM" secondAttribute="leading" id="VrQ-HQ-qTQ"/>
+                                    <constraint firstItem="beL-ql-52a" firstAttribute="width" secondItem="Lun-7p-RDM" secondAttribute="width" id="WkZ-ru-1a1"/>
+                                    <constraint firstAttribute="bottom" secondItem="beL-ql-52a" secondAttribute="bottom" id="cbi-1U-0dB"/>
+                                    <constraint firstItem="beL-ql-52a" firstAttribute="top" secondItem="Lun-7p-RDM" secondAttribute="top" id="ogp-y2-CGU"/>
+                                    <constraint firstItem="beL-ql-52a" firstAttribute="height" secondItem="Lun-7p-RDM" secondAttribute="height" id="wG5-19-RwL"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lun-7p-RDM" firstAttribute="top" secondItem="KNx-eG-xQ3" secondAttribute="top" id="P8F-tv-CZH"/>
+                            <constraint firstItem="Lun-7p-RDM" firstAttribute="bottom" secondItem="KNx-eG-xQ3" secondAttribute="bottom" id="Sar-ps-g9X"/>
+                            <constraint firstItem="Lun-7p-RDM" firstAttribute="trailing" secondItem="KNx-eG-xQ3" secondAttribute="trailing" id="nNU-kK-PLL"/>
+                            <constraint firstItem="Lun-7p-RDM" firstAttribute="leading" secondItem="KNx-eG-xQ3" secondAttribute="leading" id="sUN-2P-5A3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KNx-eG-xQ3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="상세" id="1ye-Z4-XYQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="a41-VJ-ADb">
+                            <connections>
+                                <action selector="saveButton:" destination="PTr-gE-XZN" id="15D-je-dYe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="button" destination="a41-VJ-ADb" id="qzk-RO-H7s"/>
+                        <outlet property="imageView" destination="beL-ql-52a" id="pta-H5-J88"/>
+                        <outlet property="scrollView" destination="Lun-7p-RDM" id="Gfg-fD-pYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUz-op-zMK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488.8" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hp8-cA-u2Q">
@@ -95,6 +148,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="bXY-6L-nkf">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -25,6 +25,17 @@ class SearchViewController: UIViewController {
         search(query: "wave")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        switch identifier {
+        case "showPhoto":
+            let photoVC = segue.destination as? DetailViewController
+            photoVC?.url = self.imagesArray[self.indexPath.row]["url"] as? String
+        default:
+            break
+        }
+    }
+    
     func search(query: String) {
         let searchQuery = query.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "%20")
         let request = Alamofire.request("http://localhost:3000/api/\(searchQuery)",
@@ -57,15 +68,16 @@ extension SearchViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as! SearchCollectionViewCell
-        
         photoCell.url = self.imagesArray[indexPath.row]["url"] as? String
+        
         return photoCell
     }
 }
 
 extension SearchViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Row: \(indexPath.row)")
+        self.indexPath = indexPath
+        self.performSegue(withIdentifier: "showPhoto", sender: self)
     }
 }
 
@@ -77,8 +89,10 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("clicked!")
+        self.imagesArray = []
+        self.collectionView.reloadData()
+        if let query = searchBar.text {
+            search(query: query)
+        }
     }
 }
-
-
