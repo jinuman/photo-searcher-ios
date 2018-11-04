@@ -31,7 +31,7 @@ pod install
 
 build and run Xcode 
 ```
-**You should run api server first** 
+_**✻ You should run api server first before run swift code**_
 
 ## License
 flickr-photo-searcher is available under the MIT license. 
