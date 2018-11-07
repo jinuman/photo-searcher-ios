@@ -39,7 +39,21 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(self.imageView.image!, nil, nil, nil)
+        guard let imageToSave = imageView.image else { return }
+        let alertController = UIAlertController(title: "Do you want to save photo?",
+                                                message: nil,
+                                                preferredStyle: .alert)
+        let saveAction: UIAlertAction = UIAlertAction(title: "Yes!",
+                                                      style: .default) { (_) in
+                                                        UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
+        }
+        let cancelAction: UIAlertAction = UIAlertAction(title: "No!",
+                                                        style: .cancel,
+                                                        handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 
