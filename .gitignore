@@ -1,5 +1,6 @@
 # Personal
 images/
+package-lock.json
 
 # Jetbrains
 .idea/
