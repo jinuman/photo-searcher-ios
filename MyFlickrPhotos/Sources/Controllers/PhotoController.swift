@@ -12,7 +12,8 @@ class PhotoController: UIViewController {
     
     // MARK:- Logic properties
     private let service = Service.shared
-    
+    lazy var viewModel: PhotoViewModel = PhotoViewModel()
+    private let cellId = "cellId"
     
     // MARK:- View Properties
     let photoSearchBar: UISearchBar = {
@@ -31,6 +32,10 @@ class PhotoController: UIViewController {
         return cv
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK:- Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +48,54 @@ class PhotoController: UIViewController {
         }
         
         setupViewAutoLayouts()
+        
+        photoSearchBar.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: cellId)
+        
+        searchFlickr(with: "wave")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        photoSearchBar.text = nil
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    // MARK:- Handling methods
+    fileprivate func searchFlickr(with searchQuery: String) {
+        let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "+")
+        
+        if query.isEmpty {
+            let alert = service.alertController(with: "검색어를 입력 안하셨어요..ㅎㅎ")
+            self.present(alert, animated: true, completion: nil)
+            self.photoSearchBar.text = nil
+            return
+        }
+        
+        guard let searchUrl = service.searchUrl(with: query) else {
+            return
+        }
+        print("\nsearch URL: \(searchUrl)")
+        service.flickrSearch(with: searchUrl) { [weak self] (photos, err) in
+            if let err = err {
+                print("Failed to fetch flickr data: ", err.localizedDescription)
+                return
+            }
+            guard
+                let self = self,
+                let photos = photos else {
+                    return
+            }
+            // DI
+            self.viewModel = PhotoViewModel(photos: photos)
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     // MARK:- Setup layout methods
@@ -56,5 +109,39 @@ class PhotoController: UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+    }
+}
+
+// MARK:- Regarding Collection View methods
+extension PhotoController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItems()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? PhotoCell else {
+            fatalError("Photo cell is bad")
+        }
+        cell.viewModel = viewModel.photoCellViewModel(for: indexPath)
+        return cell
+    }
+}
+
+extension PhotoController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let halfOfHeight = collectionView.frame.height / 2
+        return CGSize(width: halfOfHeight, height: halfOfHeight)
+    }
+}
+
+extension PhotoController: UICollectionViewDelegate {
+    
+}
+
+// MARK:- Regarding UISearchBarDelegate methods
+extension PhotoController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        searchFlickr(with: text)
     }
 }
