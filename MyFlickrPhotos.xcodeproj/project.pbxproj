@@ -119,18 +119,58 @@
 		3621BA03225312C0003F0464 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3621BA0C22531474003F0464 /* Shared */,
+				3621BA0D22531481003F0464 /* Models */,
+				3621BA0E22531489003F0464 /* Views */,
+				3621BA0F22531495003F0464 /* ViewModels */,
+				3621BA102253149C003F0464 /* Controllers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3621BA0C22531474003F0464 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
 				3621B9D822530C0F003F0464 /* AppDelegate.swift */,
 				3621B9FA225310FA003F0464 /* Service.swift */,
 				3621B9FC22531141003F0464 /* Constants.swift */,
 				3621B9FE22531163003F0464 /* FlickrConfig.swift */,
-				3621BA0022531182003F0464 /* Flickr.swift */,
-				3621B9F822530CF3003F0464 /* PhotoController.swift */,
-				3621BA0422531334003F0464 /* PhotoViewModel.swift */,
-				3621BA0622531367003F0464 /* PhotoCellViewModel.swift */,
-				3621BA0822531385003F0464 /* PhotoCell.swift */,
 				3621BA0A225313B6003F0464 /* UIKit+MyFlickrPhotos.swift */,
 			);
-			path = Sources;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		3621BA0D22531481003F0464 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3621BA0022531182003F0464 /* Flickr.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3621BA0E22531489003F0464 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3621BA0822531385003F0464 /* PhotoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3621BA0F22531495003F0464 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3621BA0422531334003F0464 /* PhotoViewModel.swift */,
+				3621BA0622531367003F0464 /* PhotoCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3621BA102253149C003F0464 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3621B9F822530CF3003F0464 /* PhotoController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
