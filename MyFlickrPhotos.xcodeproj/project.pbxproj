@@ -21,6 +21,7 @@
 		3621BA0922531385003F0464 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621BA0822531385003F0464 /* PhotoCell.swift */; };
 		3621BA0B225313B6003F0464 /* UIKit+MyFlickrPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621BA0A225313B6003F0464 /* UIKit+MyFlickrPhotos.swift */; };
 		3621BA1222531622003F0464 /* flickr.json in Resources */ = {isa = PBXBuildFile; fileRef = 3621BA1122531621003F0464 /* flickr.json */; };
+		3621BA14225316E6003F0464 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621BA13225316E6003F0464 /* DetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		3621BA0822531385003F0464 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		3621BA0A225313B6003F0464 /* UIKit+MyFlickrPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+MyFlickrPhotos.swift"; sourceTree = "<group>"; };
 		3621BA1122531621003F0464 /* flickr.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flickr.json; sourceTree = "<group>"; };
+		3621BA13225316E6003F0464 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				3621B9F822530CF3003F0464 /* PhotoController.swift */,
+				3621BA13225316E6003F0464 /* DetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				3621B9F922530CF3003F0464 /* PhotoController.swift in Sources */,
 				3621BA0922531385003F0464 /* PhotoCell.swift in Sources */,
+				3621BA14225316E6003F0464 /* DetailController.swift in Sources */,
 				3621BA0722531367003F0464 /* PhotoCellViewModel.swift in Sources */,
 				3621B9FF22531163003F0464 /* FlickrConfig.swift in Sources */,
 				3621BA0522531334003F0464 /* PhotoViewModel.swift in Sources */,

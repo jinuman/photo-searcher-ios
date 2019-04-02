@@ -135,7 +135,12 @@ extension PhotoController: UICollectionViewDelegateFlowLayout {
 }
 
 extension PhotoController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = DetailController()
+        // DI
+        detailVC.imageUrl = viewModel.imageUrl(for: indexPath)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 // MARK:- Regarding UISearchBarDelegate methods
