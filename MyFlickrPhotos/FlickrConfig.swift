@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct FlickrConfig {
+    static let api_key: String = "0f18de6414ffd1f343be617041839163"
+    static let secret: String = "261749dbff492ef7"
+}
