@@ -10,7 +10,11 @@ import UIKit
 
 class PhotoController: UIViewController {
     
-    // MARK:- Properties
+    // MARK:- Logic properties
+    private let service = Service.shared
+    
+    
+    // MARK:- View Properties
     let photoSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
