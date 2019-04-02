@@ -1,7 +1,7 @@
-# iOS Flickr Photo Searcher
+# iOS Flickr Photos
 
 ## Introduction
-Search photos with keyword by using flickr api and able to save into your Photos App
+Search photos with keywords by using flickr photo search API and able to save into your Photos App
 
 ## Screenshots
 <div>
@@ -12,27 +12,25 @@ Search photos with keyword by using flickr api and able to save into your Photos
 	<img width="420" alt="detail-photo" src="https://user-images.githubusercontent.com/26243835/47964922-a5b15500-e083-11e8-9410-c2fe30f08843.png">
 </div>
 
-## Environments
-```
-API server : nodejs v10.13.0, express.js, Flickr API
+## Design
 
-Client : iOS 12, Swift 4.2, Xcode 10, Alamofire, Kingfisher
-```
+- Designed with MVVM pattern.
+
+## Environments
+
+- Flickr API
+	- https://www.flickr.com/services/api/  
+- iOS 12
+- Swift 5
+- Xcode 10
 
 ## How to install and execute
 ```
-git clone https://github.com/jinuman/flickr-photo-searcher.git
+git clone https://github.com/jinuman/flickr-photos-ios
 
-npm install 
-
-npm start
-
-pod install
-
-build and run Xcode 
+build and run project
 ```
-_**✻ You should run api server first before run swift code**_
 
 ## License
-flickr-photo-searcher is available under the MIT license. 
-See the LICENSE file for more info.
+`flickr-photos-ios` is available under the `MIT license`. 
+See the `LICENSE` file for more info.
