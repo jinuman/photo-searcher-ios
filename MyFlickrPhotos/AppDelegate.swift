@@ -25,7 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         
+        customizeNavigationBar()
+        
         return true
+    }
+    
+    private func customizeNavigationBar() {
+        if let navController = window?.rootViewController as? UINavigationController {
+            navController.navigationBar.prefersLargeTitles = true
+            navController.navigationBar.barStyle = .black
+            navController.navigationBar.tintColor = .white      // BarButton color
+            navController.navigationBar.isTranslucent = false   // 바 투명도 설정 X
+        }
     }
 
 }
