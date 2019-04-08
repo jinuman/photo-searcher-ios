@@ -13,7 +13,7 @@ class Service {
     static let shared = Service()
     
     // MARK:- Helper methods
-    func alertController(with message: String) -> UIAlertController {
+    func displayAlert(with message: String) -> UIAlertController {
         let alertController = UIAlertController(title: "알림", message: message, preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         return alertController

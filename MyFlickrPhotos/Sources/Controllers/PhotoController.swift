@@ -70,7 +70,7 @@ class PhotoController: UIViewController {
         let query = searchQuery.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: " ", with: "+")
         
         if query.isEmpty {
-            let alert = service.alertController(with: "검색어를 입력 안하셨어요..ㅎㅎ")
+            let alert = service.displayAlert(with: "검색어를 입력 안하셨어요..ㅎㅎ")
             self.present(alert, animated: true, completion: nil)
             self.photoSearchBar.text = nil
             return
