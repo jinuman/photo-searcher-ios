@@ -87,13 +87,13 @@ class PhotoController: UIViewController {
             }
             guard
                 let self = self,
-                let photos = photos else {
-                    return
-            }
+                let photos = photos else { return }
             // DI
             self.viewModel = PhotoViewModel(photos: photos)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                let indexPath: IndexPath = IndexPath(item: 0, section: 0)
+                self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
             }
         }
     }
