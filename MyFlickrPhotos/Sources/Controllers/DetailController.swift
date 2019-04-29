@@ -64,24 +64,33 @@ class DetailController: UIViewController {
     // MARK:- Handling methods
     @objc fileprivate func handleSave() {
         guard let imageToSave = detailImageView.image else { return }
-        let alertController = UIAlertController(title: "사진을 아이폰에 저장 하시겠습니까?",
-                                                message: nil,
+        let alertController = UIAlertController(title: nil,
+                                                message: "사진을 아이폰에 저장 하시겠습니까?",
                                                 preferredStyle: .actionSheet)
-        let saveAction: UIAlertAction = UIAlertAction(title: "저장", style: .default) { [weak self] (_) in
+        
+        let saveAction = UIAlertAction(title: "저장", style: .default) { [weak self] (_) in
             guard let self = self else { return }
-            UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
-            
-            let saveAlertController = UIAlertController(title: "저장 확인", message: "사진 앱에 저장 되었습니다.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            saveAlertController.addAction(okAction)
-            self.present(saveAlertController, animated: true, completion: nil)
+            UIImageWriteToSavedPhotosAlbum(imageToSave, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
         }
-        let cancelAction: UIAlertAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
+        alertController.view.addSubview(UIView()) // error disappear
+        present(alertController, animated: false, completion: nil)
+    }
+    
+    @objc fileprivate func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let alertController = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alertController, animated: true)
+        } else {
+            let alertController = UIAlertController(title: "저장 확인", message: "사진 앱에 저장되었습니다.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alertController, animated: true)
+        }
     }
     
     // MARK:- Layout methods
