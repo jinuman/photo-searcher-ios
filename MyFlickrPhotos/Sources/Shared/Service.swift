@@ -25,7 +25,7 @@ class Service {
         }
     }
     
-    func searchUrl(with text: String) -> URL? {
+    func searchUrl(with query: String) -> URL? {
         var components = URLComponents()
         components.scheme = Constants.APIScheme
         components.host = Constants.APIHost
@@ -33,8 +33,8 @@ class Service {
         
         components.queryItems = self.queryItems(with: Constants.APIparameters)
         
-        components.queryItems?.append(URLQueryItem(name: "text", value: text))
-        components.queryItems?.append(URLQueryItem(name: "tags", value: text))
+        components.queryItems?.append(URLQueryItem(name: "text", value: query))
+        components.queryItems?.append(URLQueryItem(name: "tags", value: query))
         return components.url
     }
     
@@ -70,7 +70,6 @@ class Service {
             do {
                 let flickr = try JSONDecoder().decode(Flickr.self, from: data)
                 let photos: [Photo] = flickr.photos.photo
-                print("\nphoto URL: \(photos[0].url)")
                 completion(photos, nil)
             } catch let jsonError {
                 print("Failed to decode: ", jsonError.localizedDescription)
