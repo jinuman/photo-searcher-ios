@@ -76,10 +76,8 @@ class PhotoController: UIViewController {
             return
         }
         
-        guard let searchUrl = service.searchUrl(with: query) else {
-            return
-        }
-        print("\nsearch URL: \(searchUrl)")
+        guard let searchUrl = service.searchUrl(with: query) else { return }
+        
         service.flickrSearch(with: searchUrl) { [weak self] (photos, err) in
             if let err = err {
                 print("Failed to fetch flickr data: ", err.localizedDescription)
@@ -92,8 +90,10 @@ class PhotoController: UIViewController {
             self.viewModel = PhotoViewModel(photos: photos)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                let indexPath: IndexPath = IndexPath(item: 0, section: 0)
-                self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
+                if !photos.isEmpty {
+                    let indexPath: IndexPath = IndexPath(item: 0, section: 0)
+                    self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
+                }
             }
         }
     }
