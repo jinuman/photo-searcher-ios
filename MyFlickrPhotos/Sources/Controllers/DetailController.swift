@@ -87,9 +87,45 @@ class DetailController: UIViewController {
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
             present(alertController, animated: true)
         } else {
-            let alertController = UIAlertController(title: "저장 확인", message: "사진 앱에 저장되었습니다.", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alertController, animated: true)
+            savedFeedback()
+        }
+    }
+    
+    fileprivate func savedFeedback() {
+        DispatchQueue.main.async {
+            let savedLabel = UILabel()
+            savedLabel.text = "사진 앱에\n저장되었습니다."
+            savedLabel.textColor = .white
+            savedLabel.textAlignment = .center
+            savedLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            savedLabel.numberOfLines = 0
+            savedLabel.backgroundColor = UIColor(white: 0, alpha: 0.3)
+            
+            self.view.addSubview(savedLabel)
+            
+            savedLabel.translatesAutoresizingMaskIntoConstraints = false
+            savedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+            savedLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+            savedLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
+            savedLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            
+            savedLabel.layer.transform = CATransform3DMakeScale(0, 0, 0)
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                
+                savedLabel.layer.transform = CATransform3DMakeScale(1, 1, 1)
+                
+            }, completion: { (completed) in
+                
+                UIView.animate(withDuration: 0.5, delay: 0.75, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                    
+                    savedLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
+                    savedLabel.alpha = 0
+                    
+                }, completion: { (_) in
+                    savedLabel.removeFromSuperview()
+                })
+            })
         }
     }
     
