@@ -117,7 +117,7 @@ class DetailController: UIViewController {
                 
             }, completion: { (completed) in
                 
-                UIView.animate(withDuration: 0.5, delay: 0.75, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                UIView.animate(withDuration: 0.5, delay: 1.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                     
                     savedLabel.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
                     savedLabel.alpha = 0
