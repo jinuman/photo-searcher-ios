@@ -17,7 +17,7 @@ struct Constants {
     
     static let APIparameters = [
         "method" : "flickr.photos.search",
-        "api_key" : FlickrConfig.api_key,
+        "api_key" : FlickrConfig.apiKey,
         "sort" : "relevance",
         "per_page" : "10",
         "format" : "json",

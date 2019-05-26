@@ -1,5 +1,5 @@
 //
-//  PhotoController.swift
+//  PhotoSearchController.swift
 //  MyFlickrPhotos
 //
 //  Created by Jinwoo Kim on 02/04/2019.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class PhotoController: UIViewController {
+class PhotoSearchController: UIViewController {
     
     // MARK:- Logic properties
-    private let service = Service.shared
+    private let service = FlickrAPI.shared
     lazy var viewModel: PhotoViewModel = PhotoViewModel()
     private let cellId = "cellId"
     
@@ -113,7 +113,7 @@ class PhotoController: UIViewController {
 }
 
 // MARK:- Regarding Collection View methods
-extension PhotoController: UICollectionViewDataSource {
+extension PhotoSearchController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }
@@ -127,14 +127,14 @@ extension PhotoController: UICollectionViewDataSource {
     }
 }
 
-extension PhotoController: UICollectionViewDelegateFlowLayout {
+extension PhotoSearchController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let halfOfHeight = collectionView.frame.height / 2
         return CGSize(width: halfOfHeight, height: halfOfHeight)
     }
 }
 
-extension PhotoController: UICollectionViewDelegate {
+extension PhotoSearchController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailController()
         // DI
@@ -144,7 +144,7 @@ extension PhotoController: UICollectionViewDelegate {
 }
 
 // MARK:- Regarding UISearchBarDelegate methods
-extension PhotoController: UISearchBarDelegate {
+extension PhotoSearchController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         searchFlickr(with: text)

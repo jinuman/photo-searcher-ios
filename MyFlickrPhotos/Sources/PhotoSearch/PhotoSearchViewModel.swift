@@ -1,5 +1,5 @@
 //
-//  PhotoViewModel.swift
+//  PhotoSearchViewModel.swift
 //  MyFlickrPhotos
 //
 //  Created by Jinwoo Kim on 02/04/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PhotoViewModel {
+class PhotoSearchViewModel {
     // MARK:- Properties
     private(set) var photos: [Photo]
     
