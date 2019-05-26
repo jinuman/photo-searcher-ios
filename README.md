@@ -19,18 +19,21 @@ Search photos with keywords by using flickr photo search API and able to save in
 ## Environments
 
 - Flickr API
-	- https://www.flickr.com/services/api/  
+	- https://www.flickr.com/services/api/
 - iOS 12
 - Swift 5
 - Xcode 10
 
 ## How to install and execute
-```
-git clone https://github.com/jinuman/flickr-photos-ios
 
-build and run project
+```
+1. git clone https://github.com/jinuman/flickr-photos-ios
+
+2. open .xcodeproj
+
+3. Run the application
 ```
 
 ## License
-`flickr-photos-ios` is available under the `MIT license`. 
+`flickr-photos-ios` is available under the `MIT license`.
 See the `LICENSE` file for more info.
