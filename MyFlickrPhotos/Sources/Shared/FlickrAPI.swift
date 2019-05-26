@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  FlickrAPI.swift
 //  MyFlickrPhotos
 //
 //  Created by Jinwoo Kim on 02/04/2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Service {
+struct FlickrAPI {
     // MARK:- Singleton property
-    static let shared = Service()
+    static let shared = FlickrAPI()
     
     // MARK:- Helper methods
     func displayAlert(with message: String) -> UIAlertController {
@@ -19,7 +19,7 @@ class Service {
         return alertController
     }
     
-    func queryItems(with parameters: [String : String]) -> [URLQueryItem] {
+    private func queryItems(with parameters: [String : String]) -> [URLQueryItem] {
         return parameters.map {
             URLQueryItem(name: $0.0, value: $0.1)
         }
@@ -64,7 +64,6 @@ class Service {
                 return
             }
             
-            // Parse the data
 //            let jsonString = String(data: data, encoding: .utf8)
 //            print(jsonString!)
             do {

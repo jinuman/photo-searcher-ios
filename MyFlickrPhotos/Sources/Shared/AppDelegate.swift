@@ -20,23 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
-            let photoVC = PhotoController()
-            window.rootViewController = UINavigationController(rootViewController: photoVC)
+            let photoSearchController = PhotoSearchController()
+            window.rootViewController = UINavigationController(rootViewController: photoSearchController)
             window.makeKeyAndVisible()
         }
-        
         customizeNavigationBar()
         
         return true
     }
     
     private func customizeNavigationBar() {
-        if let navController = window?.rootViewController as? UINavigationController {
-            navController.navigationBar.prefersLargeTitles = true
-            navController.navigationBar.barStyle = .black
-            navController.navigationBar.tintColor = .white      // BarButton color
-            navController.navigationBar.isTranslucent = false   // 바 투명도 설정 X
-        }
+        guard let navController = window?.rootViewController as? UINavigationController else { return }
+        
+        navController.navigationBar.prefersLargeTitles = true
+        navController.navigationBar.isTranslucent = false   // 바 투명도 설정 X
+        navController.navigationBar.barStyle = .black
+        navController.navigationBar.tintColor = .white      // BarButton color
+        navController.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
     }
 
 }

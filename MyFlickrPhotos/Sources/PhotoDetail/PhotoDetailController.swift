@@ -1,5 +1,5 @@
 //
-//  DetailController.swift
+//  PhotoDetailController.swift
 //  MyFlickrPhotos
 //
 //  Created by Jinwoo Kim on 02/04/2019.
@@ -8,35 +8,31 @@
 
 import UIKit
 
-class DetailController: UIViewController {
+class PhotoDetailController: UIViewController {
     
-    // MARK:- Logic properties
-    let service = Service.shared
-    var imageUrl: String?
+    // MARK:- Properties
+    var viewModel: PhotoDetailViewModel?
     
-    // MARK:- View Properties
-    let scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.contentMode = .scaleToFill
-        scrollView.alwaysBounceVertical = false
-        scrollView.alwaysBounceHorizontal = false
+    // MARK:- Screen Properties
+    private lazy var scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.contentMode = .scaleToFill
+        sv.clipsToBounds = true
         
-        scrollView.showsVerticalScrollIndicator = true
-        scrollView.showsHorizontalScrollIndicator = true
-        scrollView.autoresizesSubviews = true
+        sv.alwaysBounceVertical = false
+        sv.alwaysBounceHorizontal = false
+        sv.showsVerticalScrollIndicator = true
+        sv.showsHorizontalScrollIndicator = true
+        sv.autoresizesSubviews = false
         
-        scrollView.clipsToBounds = true
-        
-        scrollView.maximumZoomScale = 5.0
-        scrollView.minimumZoomScale = 1.0
-        
-        return scrollView
+        sv.maximumZoomScale = 3.0
+        sv.minimumZoomScale = 1.0
+        sv.delegate = self
+        return sv
     }()
     
-    let detailImageView: UIImageView = {
+    private let photoDetailImageView: UIImageView = {
         let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
@@ -45,25 +41,39 @@ class DetailController: UIViewController {
     // MARK:- Life Cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Detail"
+        title = "Photo Detail"
         view.backgroundColor = .black
-        view.clipsToBounds = true
         
-        setupScrollViewForDetailImage()
+        setupSubviews()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "baseline_save_white_24pt"), style: .plain, target: self, action: #selector(handleSave))
         
-        guard let imageUrl = imageUrl else { return }
-        detailImageView.loadImageUsingCache(with: imageUrl)
+        guard let viewModel = viewModel else { return }
+        photoDetailImageView.loadImageUsingCache(with: viewModel.imageUrl)
     }
     
     deinit {
         print("DetailController \(#function)")
     }
     
+    // MARK:- Screen layout methods
+    fileprivate func setupSubviews() {
+        let guide = view.safeAreaLayoutGuide
+        view.addSubview(scrollView)
+        
+        scrollView.anchor(top: guide.topAnchor,
+                          leading: guide.leadingAnchor,
+                          bottom: guide.bottomAnchor,
+                          trailing: guide.trailingAnchor)
+        
+        scrollView.addSubview(photoDetailImageView)
+        
+        photoDetailImageView.centerInSuperview()
+    }
+    
     // MARK:- Handling methods
-    @objc fileprivate func handleSave() {
-        guard let imageToSave = detailImageView.image else { return }
+    @objc private func handleSave() {
+        guard let imageToSave = photoDetailImageView.image else { return }
         let alertController = UIAlertController(title: nil,
                                                 message: "사진을 아이폰에 저장 하시겠습니까?",
                                                 preferredStyle: .actionSheet)
@@ -81,7 +91,7 @@ class DetailController: UIViewController {
         present(alertController, animated: false, completion: nil)
     }
     
-    @objc fileprivate func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc private func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             let alertController = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
@@ -91,7 +101,7 @@ class DetailController: UIViewController {
         }
     }
     
-    fileprivate func savedFeedback() {
+    private func savedFeedback() {
         DispatchQueue.main.async {
             let savedLabel = UILabel()
             savedLabel.text = "사진 앱에\n저장되었습니다."
@@ -102,12 +112,7 @@ class DetailController: UIViewController {
             savedLabel.backgroundColor = UIColor(white: 0, alpha: 0.3)
             
             self.view.addSubview(savedLabel)
-            
-            savedLabel.translatesAutoresizingMaskIntoConstraints = false
-            savedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            savedLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-            savedLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
-            savedLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            savedLabel.centerInSuperview(size: CGSize(width: 150, height: 100))
             
             savedLabel.layer.transform = CATransform3DMakeScale(0, 0, 0)
             
@@ -128,29 +133,11 @@ class DetailController: UIViewController {
             })
         }
     }
-    
-    // MARK:- Layout methods
-    fileprivate func setupScrollViewForDetailImage() {
-        view.addSubview(scrollView)
-        scrollView.delegate = self
-        
-        let guide = view.safeAreaLayoutGuide
-        
-        scrollView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        
-        scrollView.addSubview(detailImageView)
-        
-        detailImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        detailImageView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
-    }
 }
 
 // MARK:- Regarding UIScrollViewDelegate methods
-extension DetailController: UIScrollViewDelegate {
+extension PhotoDetailController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.detailImageView
+        return self.photoDetailImageView
     }
 }

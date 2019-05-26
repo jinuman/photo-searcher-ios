@@ -22,6 +22,7 @@ struct Photos: Codable {
 }
 
 struct Photo: Codable {
+    let url: String
     let id: String
     let owner: String
     let secret: String
@@ -31,7 +32,6 @@ struct Photo: Codable {
     let ispublic: Int
     let isfriend: Int
     let isfamily: Int
-    let url: String
     let height: String
     let width: String
     
