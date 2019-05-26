@@ -10,11 +10,10 @@ import UIKit
 
 class PhotoDetailController: UIViewController {
     
-    // MARK:- Logic properties
-    private let flickrAPI = FlickrAPI.shared
-    var imageUrl: String?
+    // MARK:- Properties
+    var viewModel: PhotoDetailViewModel?
     
-    // MARK:- View Properties
+    // MARK:- Screen Properties
     private lazy var scrollView: UIScrollView = {
         let sv = UIScrollView()
         sv.contentMode = .scaleToFill
@@ -49,15 +48,15 @@ class PhotoDetailController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "baseline_save_white_24pt"), style: .plain, target: self, action: #selector(handleSave))
         
-        guard let imageUrl = imageUrl else { return }
-        photoDetailImageView.loadImageUsingCache(with: imageUrl)
+        guard let viewModel = viewModel else { return }
+        photoDetailImageView.loadImageUsingCache(with: viewModel.imageUrl)
     }
     
     deinit {
         print("DetailController \(#function)")
     }
     
-    // MARK:- Layout methods
+    // MARK:- Screen layout methods
     fileprivate func setupSubviews() {
         let guide = view.safeAreaLayoutGuide
         view.addSubview(scrollView)
@@ -73,7 +72,7 @@ class PhotoDetailController: UIViewController {
     }
     
     // MARK:- Handling methods
-    @objc fileprivate func handleSave() {
+    @objc private func handleSave() {
         guard let imageToSave = photoDetailImageView.image else { return }
         let alertController = UIAlertController(title: nil,
                                                 message: "사진을 아이폰에 저장 하시겠습니까?",
@@ -92,7 +91,7 @@ class PhotoDetailController: UIViewController {
         present(alertController, animated: false, completion: nil)
     }
     
-    @objc fileprivate func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+    @objc private func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             let alertController = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default))
@@ -102,7 +101,7 @@ class PhotoDetailController: UIViewController {
         }
     }
     
-    fileprivate func savedFeedback() {
+    private func savedFeedback() {
         DispatchQueue.main.async {
             let savedLabel = UILabel()
             savedLabel.text = "사진 앱에\n저장되었습니다."
@@ -113,12 +112,7 @@ class PhotoDetailController: UIViewController {
             savedLabel.backgroundColor = UIColor(white: 0, alpha: 0.3)
             
             self.view.addSubview(savedLabel)
-            
-            savedLabel.translatesAutoresizingMaskIntoConstraints = false
-            savedLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-            savedLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-            savedLabel.widthAnchor.constraint(equalToConstant: 150).isActive = true
-            savedLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            savedLabel.centerInSuperview(size: CGSize(width: 150, height: 100))
             
             savedLabel.layer.transform = CATransform3DMakeScale(0, 0, 0)
             

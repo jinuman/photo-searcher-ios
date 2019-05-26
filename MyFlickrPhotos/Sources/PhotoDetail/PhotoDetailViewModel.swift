@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class PhotoDetailViewModel {
+    
+    private let photo: Photo
+    
+    var imageUrl: String {
+        return photo.url
+    }
+    
+    init(photo: Photo) {
+        self.photo = photo
+    }
+}
