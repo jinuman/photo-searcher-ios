@@ -1,15 +1,15 @@
 //
-//  MyFlickrPhotosTests.swift
-//  MyFlickrPhotosTests
+//  PhotoSearcherTests.swift
+//  PhotoSearcherTests
 //
 //  Created by Jinwoo Kim on 02/04/2019.
 //  Copyright © 2019 jinuman. All rights reserved.
 //
 
 import XCTest
-@testable import MyFlickrPhotos
+@testable import PhotoSearcher
 
-class MyFlickrPhotosTests: XCTestCase {
+final class PhotoSearcherTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

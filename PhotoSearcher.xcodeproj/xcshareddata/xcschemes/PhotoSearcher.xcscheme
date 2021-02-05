@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3621B9D422530C0F003F0464"
-               BuildableName = "MyFlickrPhotos.app"
-               BlueprintName = "MyFlickrPhotos"
-               ReferencedContainer = "container:MyFlickrPhotos.xcodeproj">
+               BuildableName = "PhotoSearcher.app"
+               BlueprintName = "PhotoSearcher"
+               ReferencedContainer = "container:PhotoSearcher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,29 +27,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3621B9D422530C0F003F0464"
+            BuildableName = "PhotoSearcher.app"
+            BlueprintName = "PhotoSearcher"
+            ReferencedContainer = "container:PhotoSearcher.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3621B9E822530C10003F0464"
-               BuildableName = "MyFlickrPhotosTests.xctest"
-               BlueprintName = "MyFlickrPhotosTests"
-               ReferencedContainer = "container:MyFlickrPhotos.xcodeproj">
+               BuildableName = "PhotoSearcherTests.xctest"
+               BlueprintName = "PhotoSearcherTests"
+               ReferencedContainer = "container:PhotoSearcher.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3621B9D422530C0F003F0464"
-            BuildableName = "MyFlickrPhotos.app"
-            BlueprintName = "MyFlickrPhotos"
-            ReferencedContainer = "container:MyFlickrPhotos.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -66,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3621B9D422530C0F003F0464"
-            BuildableName = "MyFlickrPhotos.app"
-            BlueprintName = "MyFlickrPhotos"
-            ReferencedContainer = "container:MyFlickrPhotos.xcodeproj">
+            BuildableName = "PhotoSearcher.app"
+            BlueprintName = "PhotoSearcher"
+            ReferencedContainer = "container:PhotoSearcher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -78,8 +76,6 @@
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -92,9 +88,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3621B9D422530C0F003F0464"
-            BuildableName = "MyFlickrPhotos.app"
-            BlueprintName = "MyFlickrPhotos"
-            ReferencedContainer = "container:MyFlickrPhotos.xcodeproj">
+            BuildableName = "PhotoSearcher.app"
+            BlueprintName = "PhotoSearcher"
+            ReferencedContainer = "container:PhotoSearcher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

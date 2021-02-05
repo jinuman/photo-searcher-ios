@@ -1,6 +1,6 @@
 //
-//  UIKit+MyFlickrPhotos.swift
-//  MyFlickrPhotos
+//  UIKit+PhotoSearcher.swift
+//  PhotoSearcher
 //
 //  Created by Jinwoo Kim on 02/04/2019.
 //  Copyright © 2019 jinuman. All rights reserved.

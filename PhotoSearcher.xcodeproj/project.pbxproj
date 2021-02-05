@@ -11,7 +11,7 @@
 		3621B9D922530C0F003F0464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9D822530C0F003F0464 /* AppDelegate.swift */; };
 		3621B9E022530C10003F0464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3621B9DF22530C10003F0464 /* Assets.xcassets */; };
 		3621B9E322530C10003F0464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3621B9E122530C10003F0464 /* LaunchScreen.storyboard */; };
-		3621B9EE22530C10003F0464 /* MyFlickrPhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9ED22530C10003F0464 /* MyFlickrPhotosTests.swift */; };
+		3621B9EE22530C10003F0464 /* PhotoSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9ED22530C10003F0464 /* PhotoSearcherTests.swift */; };
 		3621B9F922530CF3003F0464 /* PhotoSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9F822530CF3003F0464 /* PhotoSearchController.swift */; };
 		3621B9FB225310FA003F0464 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9FA225310FA003F0464 /* FlickrAPI.swift */; };
 		3621B9FD22531141003F0464 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3621B9FC22531141003F0464 /* Constants.swift */; };
@@ -36,13 +36,13 @@
 
 /* Begin PBXFileReference section */
 		3618509E229ACA1400825A35 /* PhotoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewModel.swift; sourceTree = "<group>"; };
-		3621B9D522530C0F003F0464 /* MyFlickrPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFlickrPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3621B9D522530C0F003F0464 /* PhotoSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3621B9D822530C0F003F0464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3621B9DF22530C10003F0464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3621B9E222530C10003F0464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3621B9E422530C10003F0464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3621B9E922530C10003F0464 /* MyFlickrPhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFlickrPhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3621B9ED22530C10003F0464 /* MyFlickrPhotosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlickrPhotosTests.swift; sourceTree = "<group>"; };
+		3621B9E922530C10003F0464 /* PhotoSearcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoSearcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3621B9ED22530C10003F0464 /* PhotoSearcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearcherTests.swift; sourceTree = "<group>"; };
 		3621B9EF22530C10003F0464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3621B9F822530CF3003F0464 /* PhotoSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSearchController.swift; sourceTree = "<group>"; };
 		3621B9FA225310FA003F0464 /* FlickrAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		3621B9CC22530C0F003F0464 = {
 			isa = PBXGroup;
 			children = (
-				3621B9D722530C0F003F0464 /* MyFlickrPhotos */,
-				3621B9EC22530C10003F0464 /* MyFlickrPhotosTests */,
+				3621B9D722530C0F003F0464 /* PhotoSearcher */,
+				3621B9EC22530C10003F0464 /* PhotoSearcherTests */,
 				3621B9D622530C0F003F0464 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,29 +105,29 @@
 		3621B9D622530C0F003F0464 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3621B9D522530C0F003F0464 /* MyFlickrPhotos.app */,
-				3621B9E922530C10003F0464 /* MyFlickrPhotosTests.xctest */,
+				3621B9D522530C0F003F0464 /* PhotoSearcher.app */,
+				3621B9E922530C10003F0464 /* PhotoSearcherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3621B9D722530C0F003F0464 /* MyFlickrPhotos */ = {
+		3621B9D722530C0F003F0464 /* PhotoSearcher */ = {
 			isa = PBXGroup;
 			children = (
 				3621BA03225312C0003F0464 /* Sources */,
 				3621BA02225312B3003F0464 /* Resources */,
 				3621B9E122530C10003F0464 /* LaunchScreen.storyboard */,
 			);
-			path = MyFlickrPhotos;
+			path = PhotoSearcher;
 			sourceTree = "<group>";
 		};
-		3621B9EC22530C10003F0464 /* MyFlickrPhotosTests */ = {
+		3621B9EC22530C10003F0464 /* PhotoSearcherTests */ = {
 			isa = PBXGroup;
 			children = (
-				3621B9ED22530C10003F0464 /* MyFlickrPhotosTests.swift */,
+				3621B9ED22530C10003F0464 /* PhotoSearcherTests.swift */,
 				3621B9EF22530C10003F0464 /* Info.plist */,
 			);
-			path = MyFlickrPhotosTests;
+			path = PhotoSearcherTests;
 			sourceTree = "<group>";
 		};
 		3621BA02225312B3003F0464 /* Resources */ = {
@@ -174,9 +174,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3621B9D422530C0F003F0464 /* MyFlickrPhotos */ = {
+		3621B9D422530C0F003F0464 /* PhotoSearcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3621B9F222530C10003F0464 /* Build configuration list for PBXNativeTarget "MyFlickrPhotos" */;
+			buildConfigurationList = 3621B9F222530C10003F0464 /* Build configuration list for PBXNativeTarget "PhotoSearcher" */;
 			buildPhases = (
 				3621B9D122530C0F003F0464 /* Sources */,
 				3621B9D222530C0F003F0464 /* Frameworks */,
@@ -186,14 +186,14 @@
 			);
 			dependencies = (
 			);
-			name = MyFlickrPhotos;
+			name = PhotoSearcher;
 			productName = MyFlickrPhotos;
-			productReference = 3621B9D522530C0F003F0464 /* MyFlickrPhotos.app */;
+			productReference = 3621B9D522530C0F003F0464 /* PhotoSearcher.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3621B9E822530C10003F0464 /* MyFlickrPhotosTests */ = {
+		3621B9E822530C10003F0464 /* PhotoSearcherTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3621B9F522530C10003F0464 /* Build configuration list for PBXNativeTarget "MyFlickrPhotosTests" */;
+			buildConfigurationList = 3621B9F522530C10003F0464 /* Build configuration list for PBXNativeTarget "PhotoSearcherTests" */;
 			buildPhases = (
 				3621B9E522530C10003F0464 /* Sources */,
 				3621B9E622530C10003F0464 /* Frameworks */,
@@ -204,9 +204,9 @@
 			dependencies = (
 				3621B9EB22530C10003F0464 /* PBXTargetDependency */,
 			);
-			name = MyFlickrPhotosTests;
+			name = PhotoSearcherTests;
 			productName = MyFlickrPhotosTests;
-			productReference = 3621B9E922530C10003F0464 /* MyFlickrPhotosTests.xctest */;
+			productReference = 3621B9E922530C10003F0464 /* PhotoSearcherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3621B9D022530C0F003F0464 /* Build configuration list for PBXProject "MyFlickrPhotos" */;
+			buildConfigurationList = 3621B9D022530C0F003F0464 /* Build configuration list for PBXProject "PhotoSearcher" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -241,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3621B9D422530C0F003F0464 /* MyFlickrPhotos */,
-				3621B9E822530C10003F0464 /* MyFlickrPhotosTests */,
+				3621B9D422530C0F003F0464 /* PhotoSearcher */,
+				3621B9E822530C10003F0464 /* PhotoSearcherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,7 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3621B9EE22530C10003F0464 /* MyFlickrPhotosTests.swift in Sources */,
+				3621B9EE22530C10003F0464 /* PhotoSearcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +299,7 @@
 /* Begin PBXTargetDependency section */
 		3621B9EB22530C10003F0464 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3621B9D422530C0F003F0464 /* MyFlickrPhotos */;
+			target = 3621B9D422530C0F003F0464 /* PhotoSearcher */;
 			targetProxy = 3621B9EA22530C10003F0464 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,12 +438,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27KLZMF6K;
-				INFOPLIST_FILE = "$(SRCROOT)/MyFlickrPhotos/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoSearcher/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.MyFlickrPhotos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.PhotoSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,12 +456,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27KLZMF6K;
-				INFOPLIST_FILE = "$(SRCROOT)/MyFlickrPhotos/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/PhotoSearcher/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.MyFlickrPhotos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.PhotoSearcher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,17 +475,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27KLZMF6K;
-				INFOPLIST_FILE = MyFlickrPhotosTests/Info.plist;
+				INFOPLIST_FILE = PhotoSearcherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.MyFlickrPhotosTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.PhotoSearcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyFlickrPhotos.app/MyFlickrPhotos";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSearcher.app/PhotoSearcher";
 			};
 			name = Debug;
 		};
@@ -496,24 +496,24 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K27KLZMF6K;
-				INFOPLIST_FILE = MyFlickrPhotosTests/Info.plist;
+				INFOPLIST_FILE = PhotoSearcherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.MyFlickrPhotosTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jinuman.PhotoSearcherTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyFlickrPhotos.app/MyFlickrPhotos";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoSearcher.app/PhotoSearcher";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3621B9D022530C0F003F0464 /* Build configuration list for PBXProject "MyFlickrPhotos" */ = {
+		3621B9D022530C0F003F0464 /* Build configuration list for PBXProject "PhotoSearcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621B9F022530C10003F0464 /* Debug */,
@@ -522,7 +522,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3621B9F222530C10003F0464 /* Build configuration list for PBXNativeTarget "MyFlickrPhotos" */ = {
+		3621B9F222530C10003F0464 /* Build configuration list for PBXNativeTarget "PhotoSearcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621B9F322530C10003F0464 /* Debug */,
@@ -531,7 +531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3621B9F522530C10003F0464 /* Build configuration list for PBXNativeTarget "MyFlickrPhotosTests" */ = {
+		3621B9F522530C10003F0464 /* Build configuration list for PBXNativeTarget "PhotoSearcherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3621B9F622530C10003F0464 /* Debug */,
