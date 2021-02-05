@@ -56,3 +56,15 @@ config_cocoapods_binary_cache(
   },
   prebuild_config: 'Debug'
 )
+
+post_install do |installer_representation|
+  installer_representation.pods_project.targets.each do |target|
+    target.build_configurations.each do |build_config|
+      build_config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
+
+      if build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] == '8.0'
+        build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+      end
+    end
+  end
+end
