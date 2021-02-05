@@ -24,6 +24,11 @@ DerivedData/
 # *.xcodeproj
 # Projects/projects.yml
 
+### Tuist ###
+*.xcodeproj
+graph.dot
+Derived/
+
 ### Xcode Path ###
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
