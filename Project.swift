@@ -2,17 +2,17 @@ import ProjectDescription
 
 let targetActions = [
     TargetAction.pre(
-        path: "Scripts/SwiftLintRunScript.sh",
+        path: "Scripts/SwiftlintRunScript.sh",
         arguments: [],
         name: "SwiftLint"
     ),
     TargetAction.pre(
-        path: "Scripts/RSwiftRunScript.sh",
+        path: "Scripts/RswiftRunScript.sh",
         arguments: [],
         name: "R.Swift",
         inputPaths: [Path.init("$TEMP_DIR/rswift-lastrun")],
         inputFileListPaths: [],
-        outputPaths: [Path.init("$SRCROOT/TuistSample/Sources/R.generated.swift")],
+        outputPaths: [Path.init("$SRCROOT/PhotoSearcher/Resources/R.generated.swift")],
         outputFileListPaths: []
     )
 ]
@@ -34,6 +34,7 @@ let project = Project(
             infoPlist: "PhotoSearcher/Supporting Files/PhotoSearcher-Info.plist",
             sources: ["PhotoSearcher/Sources/**"],
             resources: ["PhotoSearcher/Resources/**"],
+            actions: targetActions,
             dependencies: [
                 .cocoapods(path: ".")
             ],

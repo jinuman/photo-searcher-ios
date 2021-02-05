@@ -43,9 +43,11 @@ extension UIImageView {
 }
 
 extension UIColor {
+    // swiftlint:disable identifier_name
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)
     }
+    // swiftlint:enable identifier_name
 }
 
 extension UIView {

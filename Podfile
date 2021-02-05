@@ -25,8 +25,11 @@ pod 'Pure', binary: true
 # UI
 pod 'SnapKit', binary: true
 
+# Resources
+pod 'R.swift', binary: true
+
 # Code Quality
-pod 'SwiftLint', binary: true
+# pod 'SwiftLint', binary: true
 
 # Convenience
 pod 'Then', binary: true
