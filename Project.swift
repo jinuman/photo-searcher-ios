@@ -17,6 +17,12 @@ let targetActions = [
     )
 ]
 
+let targetSettings = Settings(
+    base: [
+        "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon-PhotoSearcher"
+    ]
+)
+
 let project = Project(
     name: "PhotoSearcher",
     targets: [
@@ -30,7 +36,8 @@ let project = Project(
             resources: ["PhotoSearcher/Resources/**"],
             dependencies: [
                 .cocoapods(path: ".")
-            ]
+            ],
+            settings: targetSettings
         ),
         Target(
             name: "PhotoSearcherTests",
