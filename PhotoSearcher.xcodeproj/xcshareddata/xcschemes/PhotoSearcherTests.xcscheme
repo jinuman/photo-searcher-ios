@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A797BD92BC00AD2AB2BE5758"
-               BuildableName = "PhotoSearcher.app"
-               BlueprintName = "PhotoSearcher"
+               BlueprintIdentifier = "75B0A81DBC32FB310C78CB76"
+               BuildableName = "PhotoSearcherTests.xctest"
+               BlueprintName = "PhotoSearcherTests"
                ReferencedContainer = "container:PhotoSearcher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -52,16 +52,15 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       disableMainThreadChecker = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A797BD92BC00AD2AB2BE5758"
-            BuildableName = "PhotoSearcher.app"
-            BlueprintName = "PhotoSearcher"
+            BlueprintIdentifier = "75B0A81DBC32FB310C78CB76"
+            BuildableName = "PhotoSearcherTests.xctest"
+            BlueprintName = "PhotoSearcherTests"
             ReferencedContainer = "container:PhotoSearcher.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -69,16 +68,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A797BD92BC00AD2AB2BE5758"
-            BuildableName = "PhotoSearcher.app"
-            BlueprintName = "PhotoSearcher"
+            BlueprintIdentifier = "75B0A81DBC32FB310C78CB76"
+            BuildableName = "PhotoSearcherTests.xctest"
+            BlueprintName = "PhotoSearcherTests"
             ReferencedContainer = "container:PhotoSearcher.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
