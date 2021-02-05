@@ -1,7 +1,10 @@
-# iOS Flickr Photos
+# Photo Searcher iOS
 
 ## Introduction
-Search photos with keywords by using flickr photo search API and able to save into your Photos App
+
+Search photos with keywords by using flickr photo search API and able to save into your Photos application.
+
+This is useful when downloading pictures to the simulator.
 
 ## Screenshots
 <div>
@@ -12,11 +15,7 @@ Search photos with keywords by using flickr photo search API and able to save in
 	<img width="420" alt="detail-photo" src="https://user-images.githubusercontent.com/26243835/47964922-a5b15500-e083-11e8-9410-c2fe30f08843.png">
 </div>
 
-## Design
-
-- Designed with MVVM pattern.
-
-## Environments
+## Environment
 
 - Flickr API
 	- https://www.flickr.com/services/api/
