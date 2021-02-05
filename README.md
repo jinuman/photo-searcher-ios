@@ -1,8 +1,11 @@
-# Photo Searcher iOS
+Photo Searcher iOS
+==================
+
+[![Tuist Badge](https://img.shields.io/badge/powered%20by-Tuist-green.svg?longCache=true)](https://github.com/tuist)
 
 ## Introduction
 
-Search photos with keywords by using flickr photo search API and able to save into your Photos application.
+Search photos with keywords from some APIs (e.g.Flickr) and able to save into your Photos application.
 
 This is useful when downloading pictures to the simulator.
 
