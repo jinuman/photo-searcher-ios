@@ -29,7 +29,7 @@ let project = Project(
             sources: ["PhotoSearcher/Sources/**"],
             resources: ["PhotoSearcher/Resources/**"],
             dependencies: [
-                // .cocoapods(path: ".")
+                .cocoapods(path: ".")
             ]
         ),
         Target(

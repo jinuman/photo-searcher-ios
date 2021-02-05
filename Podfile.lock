@@ -1,0 +1,94 @@
+PODS:
+  - Differentiator (5.0.0)
+  - Nimble (9.0.0)
+  - Pure (1.1.4):
+    - Pure/Core (= 1.1.4)
+  - Pure/Core (1.1.4)
+  - Quick (3.0.0)
+  - ReactorKit (3.0.0):
+    - RxSwift (~> 6.0)
+    - WeakMapTable (~> 1.1)
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxFlow (2.12.0):
+    - RxCocoa (>= 6.0.0)
+    - RxSwift (>= 6.0.0)
+  - RxGesture (4.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+  - RxTest (6.0.0):
+    - RxSwift (= 6.0.0)
+  - SnapKit (5.0.1)
+  - SwiftLint (0.42.0)
+  - Then (2.7.0)
+  - WeakMapTable (1.2.0)
+
+DEPENDENCIES:
+  - Nimble
+  - Pure
+  - Quick
+  - ReactorKit
+  - RxCocoa
+  - RxDataSources
+  - RxFlow
+  - RxGesture
+  - RxKeyboard
+  - RxSwift
+  - RxTest
+  - SnapKit
+  - SwiftLint
+  - Then
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Differentiator
+    - Nimble
+    - Pure
+    - Quick
+    - ReactorKit
+    - RxCocoa
+    - RxDataSources
+    - RxFlow
+    - RxGesture
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - SnapKit
+    - SwiftLint
+    - Then
+    - WeakMapTable
+
+SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Pure: 82d6f4438672a41d21ea6fadd126e1466db001c5
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  ReactorKit: 5348c9881dcb546605b451e32759dccc9937d36e
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxFlow: b407eb6b5d956041a9e0930469346e104911a470
+  RxGesture: b095a86df33d199a33b46a644e7c58bdef8ab035
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+  RxTest: ddef4052e63cb116f5b73510488c3113c37c62e5
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
+
+PODFILE CHECKSUM: 42445cb48925abdd531126f3aea508015218a174
+
+COCOAPODS: 1.10.1
