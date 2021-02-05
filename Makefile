@@ -1,6 +1,6 @@
 project:
-	make cocoapods
 	make tuist
+	make cocoapods
 
 cocoapods:
 	@echo "Making cocoapods dependencies"
