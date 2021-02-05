@@ -17,6 +17,7 @@ included:
 
 excluded:
   - Pods
+  - ${TARGET_NAME}/Resources/R.generated.swift
 
 analyzer_rules:
   - unused_import
