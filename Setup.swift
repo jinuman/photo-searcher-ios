@@ -1,5 +1,8 @@
 import ProjectDescription
 
 let setup = Setup([
-    .homebrew(packages: ["swiftlint"])
+  .homebrew(packages: [
+    "swiftlint",
+    "swiftformat",
+  ]),
 ])

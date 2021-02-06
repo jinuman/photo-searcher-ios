@@ -1,0 +1,10 @@
+### file options ###
+
+### format options ###
+
+--indent 2
+--indentcase false
+
+### rules ###
+
+--enable isEmpty
