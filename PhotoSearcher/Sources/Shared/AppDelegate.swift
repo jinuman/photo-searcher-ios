@@ -10,34 +10,29 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
 
-    var window: UIWindow?
+  func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    Thread.sleep(forTimeInterval: 1.3)
 
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        Thread.sleep(forTimeInterval: 1.3)
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        if let window = window {
-            let photoSearchController = PhotoSearchController()
-            window.rootViewController = UINavigationController(rootViewController: photoSearchController)
-            window.makeKeyAndVisible()
-        }
-        customizeNavigationBar()
-        
-        return true
+    window = UIWindow(frame: UIScreen.main.bounds)
+    if let window = window {
+      let photoSearchController = PhotoSearchController()
+      window.rootViewController = UINavigationController(rootViewController: photoSearchController)
+      window.makeKeyAndVisible()
     }
-    
-    private func customizeNavigationBar() {
-        guard let navController = window?.rootViewController as? UINavigationController else { return }
-        
-        navController.navigationBar.prefersLargeTitles = true
-        navController.navigationBar.isTranslucent = false   // 바 투명도 설정 X
-        navController.navigationBar.barStyle = .black
-        navController.navigationBar.tintColor = .white      // BarButton color
-        navController.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-    }
+    customizeNavigationBar()
 
+    return true
+  }
+
+  private func customizeNavigationBar() {
+    guard let navController = window?.rootViewController as? UINavigationController else { return }
+
+    navController.navigationBar.prefersLargeTitles = true
+    navController.navigationBar.isTranslucent = false // 바 투명도 설정 X
+    navController.navigationBar.barStyle = .black
+    navController.navigationBar.tintColor = .white // BarButton color
+    navController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+  }
 }
-
