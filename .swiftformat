@@ -1,10 +1,14 @@
 ### file options ###
 
+--exclude Pods
+
 ### format options ###
 
---indent 2
+# --indent 2
 --indentcase false
+# --tabwidth 2
 
 ### rules ###
 
 --enable isEmpty
+--disable blankLinesAtStartOfScope

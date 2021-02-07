@@ -23,6 +23,7 @@ pod 'RxFlow', binary: true
 pod 'Pure', binary: true
 
 # UI
+pod 'FlexLayout', binary: true
 pod 'SnapKit', binary: true
 
 # Resources

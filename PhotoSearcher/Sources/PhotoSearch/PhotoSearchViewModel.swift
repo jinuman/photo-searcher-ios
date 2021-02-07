@@ -9,28 +9,28 @@
 import Foundation
 
 class PhotoSearchViewModel {
-  // MARK: - Properties
+    // MARK: - Properties
 
-  private let photos: [Photo]
+    private let photos: [Photo]
 
-  // MARK: - Dependency Injection (DI)
+    // MARK: - Dependency Injection (DI)
 
-  init(photos: [Photo] = []) {
-    self.photos = photos
-  }
+    init(photos: [Photo] = []) {
+        self.photos = photos
+    }
 
-  // MARK: - Handling methods
+    // MARK: - Handling methods
 
-  func photo(for indexPath: IndexPath) -> Photo {
-    return photos[indexPath.row]
-  }
+    func photo(for indexPath: IndexPath) -> Photo {
+        return photos[indexPath.row]
+    }
 
-  func numberOfItems() -> Int {
-    return photos.count
-  }
+    func numberOfItems() -> Int {
+        return photos.count
+    }
 
-  func imageUrl(for indexPath: IndexPath) -> String {
-    let photo = self.photo(for: indexPath)
-    return photo.url
-  }
+    func imageUrl(for indexPath: IndexPath) -> String {
+        let photo = self.photo(for: indexPath)
+        return photo.url
+    }
 }
