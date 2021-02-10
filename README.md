@@ -37,5 +37,5 @@ This is useful when downloading pictures to the simulator.
 ```
 
 ## License
-`flickr-photos-ios` is available under the `MIT license`.
+`photo-searcher-ios` is available under the `MIT license`.
 See the `LICENSE` file for more info.
