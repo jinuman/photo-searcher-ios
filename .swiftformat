@@ -11,4 +11,8 @@
 ### rules ###
 
 --enable isEmpty
+
+--disable redundantSelf
+--disable initCoderUnavailable
+--disable trailingCommas
 --disable blankLinesAtStartOfScope
