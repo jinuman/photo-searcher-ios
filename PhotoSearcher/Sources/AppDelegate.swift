@@ -19,7 +19,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Initializing
 
     override private init() {
-        dependency = CompositionRoot.resolve()
+        self.dependency = CompositionRoot.resolve()
         super.init()
     }
 
@@ -32,7 +32,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         Thread.sleep(forTimeInterval: 1.3)
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = dependency.rootViewController
+        window.rootViewController = self.dependency.rootViewController
         window.makeKeyAndVisible()
         self.window = window
 
@@ -42,7 +42,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func customizeNavigationBar() {
-        guard let navigationController = window?.rootViewController as? UINavigationController else { return }
+        guard let navigationController = self.window?.rootViewController as? UINavigationController else { return }
 
         navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.isTranslucent = false // 바 투명도 설정 X
