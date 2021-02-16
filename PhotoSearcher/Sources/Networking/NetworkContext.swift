@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkingContext {
-    static var baseURL: URL {
+    static var flickrBaseURL: URL {
         guard let urlString = Bundle.main.infoDictionary?["API_BASE_URL"] as? String,
               let url = URL(string: urlString)
         else {

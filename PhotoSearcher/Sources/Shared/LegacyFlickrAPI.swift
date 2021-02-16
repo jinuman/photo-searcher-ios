@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct FlickrAPI {
+struct LegacyFlickrAPI {
     // MARK: - Singleton property
 
-    static let shared = FlickrAPI()
+    static let shared = LegacyFlickrAPI()
 
     // MARK: - Helper methods
 

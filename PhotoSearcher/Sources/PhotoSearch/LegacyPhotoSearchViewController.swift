@@ -14,7 +14,7 @@ class LegacyPhotoSearchViewController: UIViewController {
 
     private lazy var viewModel = PhotoSearchViewModel()
 
-    private let flickrAPI = FlickrAPI.shared
+    private let flickrAPI = LegacyFlickrAPI.shared
     private let cellId = "photoCellId"
 
     // MARK: - Screen Properties
