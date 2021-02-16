@@ -36,7 +36,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.window = window
 
-        customizeNavigationBar()
+        self.customizeNavigationBar()
 
         return true
     }

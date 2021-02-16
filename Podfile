@@ -4,33 +4,26 @@ plugin 'cocoapods-binary-cache'
 inhibit_all_warnings!
 use_frameworks!
 
-platform :ios, '12.0'
+platform :ios, '11.0'
 
 # Rx
-pod 'RxSwift', binary: true
+pod 'RxSwift', '~> 6', binary: true
 pod 'RxCocoa', binary: true
 pod 'RxDataSources', binary: true
 pod 'RxGesture', binary: true
 pod 'RxKeyboard', binary: true
 
 # Architecture
-pod 'ReactorKit', binary: true
-
-# Navigation
-pod 'RxFlow', binary: true
+pod 'ReactorKit', '~> 3', binary: true
 
 # DI
 pod 'Pure', binary: true
 
 # UI
-pod 'FlexLayout', binary: true
 pod 'SnapKit', binary: true
 
 # Resources
 pod 'R.swift', binary: true
-
-# Code Quality
-# pod 'SwiftLint', binary: true
 
 # Convenience
 pod 'Then', binary: true
