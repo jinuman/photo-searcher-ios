@@ -25,7 +25,7 @@ enum CompositionRoot {
 
         // MARK: Photo Search
 
-        let photoSearchViewController = PhotoSearchViewController()
+        let photoSearchViewController = LegacyPhotoSearchViewController()
 
         // MARK: Root View Controller
 

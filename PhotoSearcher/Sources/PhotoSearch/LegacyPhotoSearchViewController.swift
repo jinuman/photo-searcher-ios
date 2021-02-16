@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoSearchViewController: UIViewController {
+class LegacyPhotoSearchViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -122,7 +122,7 @@ class PhotoSearchViewController: UIViewController {
 
 // MARK: - Regarding Collection View methods
 
-extension PhotoSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension LegacyPhotoSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return viewModel.numberOfItems()
     }
@@ -153,7 +153,7 @@ extension PhotoSearchViewController: UICollectionViewDataSource, UICollectionVie
 
 // MARK: - Regarding UISearchBarDelegate methods
 
-extension PhotoSearchViewController: UISearchBarDelegate {
+extension LegacyPhotoSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
         searchFlickr(with: query)
