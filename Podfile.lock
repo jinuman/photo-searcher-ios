@@ -1,5 +1,10 @@
 PODS:
+  - Alamofire (5.4.1)
   - Differentiator (5.0.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - Nimble (9.0.0)
   - Pure (1.1.4):
     - Pure/Core (= 1.1.4)
@@ -34,6 +39,7 @@ PODS:
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
+  - Moya
   - Nimble
   - Pure
   - Quick
@@ -50,7 +56,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - Differentiator
+    - Moya
     - Nimble
     - Pure
     - Quick
@@ -69,7 +77,9 @@ SPEC REPOS:
     - WeakMapTable
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Pure: 82d6f4438672a41d21ea6fadd126e1466db001c5
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
@@ -87,6 +97,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 90a35b4f7e937b8ef6862370774ced3ab2e11120
+PODFILE CHECKSUM: 3d6b6610d4f83017bed9e1ef01fc61a3f64617a8
 
 COCOAPODS: 1.10.1
