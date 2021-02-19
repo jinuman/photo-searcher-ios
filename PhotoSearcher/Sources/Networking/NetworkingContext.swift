@@ -16,7 +16,7 @@ struct NetworkingContext {
         }
         return url
     }
-    
+
     static var httpHeaders: [String: String] {
         return [:]
     }

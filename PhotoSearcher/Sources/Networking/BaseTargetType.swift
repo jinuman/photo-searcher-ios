@@ -16,23 +16,23 @@ extension BaseTargetType {
     var headers: [String: String]? {
         return NetworkingContext.httpHeaders + (self.customHeaders ?? [:])
     }
-    
+
     var customHeaders: [String: String]? {
         return nil
     }
-    
+
     var baseURL: URL {
-        return NetworkingContext.baseURL
+        return NetworkingContext.flickrBaseURL
     }
-    
+
     var path: String {
         return self.route.path
     }
-    
+
     var method: Moya.Method {
         return self.route.method
     }
-    
+
     var sampleData: Data {
         return Data()
     }
@@ -57,7 +57,7 @@ enum Route {
     case patch(String)
     case trace(String)
     case connect(String)
-    
+
     var path: String {
         switch self {
         case let .get(path): return path
@@ -71,7 +71,7 @@ enum Route {
         case let .connect(path): return path
         }
     }
-    
+
     var method: Moya.Method {
         switch self {
         case .get: return .get

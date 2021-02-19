@@ -10,9 +10,9 @@ import Moya
 
 import RxSwift
 
-protocol NetworkServiceProtocol {
+protocol NetworkingServiceProtocol {
     associatedtype Target: BaseTargetType
-    
+
     func request(
         _ target: Target,
         callbackQueue: DispatchQueue?,
@@ -21,15 +21,15 @@ protocol NetworkServiceProtocol {
     ) -> Cancellable
 }
 
-struct NetworkService<Target: BaseTargetType>: NetworkServiceProtocol {
-    
+struct NetworkingService<Target: BaseTargetType>: NetworkingServiceProtocol {
+
     typealias Provider = MoyaProvider<Target>
     typealias EndpointClosure = Provider.EndpointClosure
     typealias RequestClosure = Provider.RequestClosure
     typealias StubClosure = Provider.StubClosure
-    
+
     private let provider: MoyaProvider<Target>
-    
+
     init(
         endpointClosure: @escaping EndpointClosure = Provider.defaultEndpointMapping,
         requestClosure: @escaping RequestClosure = Provider.defaultRequestMapping,
@@ -37,7 +37,7 @@ struct NetworkService<Target: BaseTargetType>: NetworkServiceProtocol {
         callbackQueue: DispatchQueue? = nil,
         session: Session = Self.makeSession(),
         trackInflights: Bool = false,
-        plugins: [PluginType] = [NetworkErrorHandlingPlugin(), NetworkLoggingPlugin()]
+        plugins: [PluginType] = [NetworkingErrorHandlingPlugin(), NetworkingLoggingPlugin()]
     ) {
         self.provider = Provider(
             endpointClosure: endpointClosure,
@@ -49,7 +49,7 @@ struct NetworkService<Target: BaseTargetType>: NetworkServiceProtocol {
             trackInflights: trackInflights
         )
     }
-    
+
     func request(
         _ target: Target,
         callbackQueue: DispatchQueue?,
@@ -63,10 +63,10 @@ struct NetworkService<Target: BaseTargetType>: NetworkServiceProtocol {
             completion: completion
         )
     }
-    
+
     private static func makeSession(retryLimit: UInt = 1) -> Session {
         let retryPolicy = RetryPolicy(retryLimit: retryLimit)
-        
+
         return Session(
             configuration: URLSessionConfiguration.default,
             startRequestsImmediately: false,
@@ -75,9 +75,9 @@ struct NetworkService<Target: BaseTargetType>: NetworkServiceProtocol {
     }
 }
 
-extension NetworkService: ReactiveCompatible {}
+extension NetworkingService: ReactiveCompatible {}
 
-extension Reactive where Base: NetworkServiceProtocol {
+extension Reactive where Base: NetworkingServiceProtocol {
     func request(
         _ token: Base.Target,
         callbackQueue: DispatchQueue? = nil

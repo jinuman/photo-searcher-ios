@@ -1,5 +1,5 @@
 //
-//  NetworkErrorHandlingPlugin.swift
+//  NetworkingErrorHandlingPlugin.swift
 //  PhotoSearcher
 //
 //  Created by Jinwoo Kim on 2021/02/16.
@@ -7,7 +7,7 @@
 
 import Moya
 
-struct NetworkErrorHandlingPlugin: PluginType {
+struct NetworkingErrorHandlingPlugin: PluginType {
     func process(
         _ result: Result<Response, MoyaError>,
         target _: TargetType
