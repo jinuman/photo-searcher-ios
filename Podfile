@@ -23,7 +23,7 @@ pod 'Pure', binary: true
 pod 'SnapKit', binary: true
 
 # Networking
-pod 'Moya', :binary => true
+pod 'Moya', '~> 14', binary: true
 
 # Resources
 pod 'R.swift', binary: true

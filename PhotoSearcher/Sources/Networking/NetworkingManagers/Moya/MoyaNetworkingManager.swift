@@ -1,5 +1,5 @@
 //
-//  NetworkingService.swift
+//  MoyaNetworkingManager.swift
 //  PhotoSearcher
 //
 //  Created by Jinwoo Kim on 2021/02/16.
@@ -10,7 +10,7 @@ import Moya
 
 import RxSwift
 
-protocol NetworkingServiceProtocol {
+protocol MoyaNetworkingServiceProtocol {
     associatedtype Target: BaseTargetType
 
     func request(
@@ -21,7 +21,7 @@ protocol NetworkingServiceProtocol {
     ) -> Cancellable
 }
 
-struct NetworkingService<Target: BaseTargetType>: NetworkingServiceProtocol {
+struct MoyaNetworkingManager<Target: BaseTargetType>: MoyaNetworkingServiceProtocol {
 
     typealias Provider = MoyaProvider<Target>
     typealias EndpointClosure = Provider.EndpointClosure
@@ -75,9 +75,9 @@ struct NetworkingService<Target: BaseTargetType>: NetworkingServiceProtocol {
     }
 }
 
-extension NetworkingService: ReactiveCompatible {}
+extension MoyaNetworkingManager: ReactiveCompatible {}
 
-extension Reactive where Base: NetworkingServiceProtocol {
+extension Reactive where Base: MoyaNetworkingServiceProtocol {
     func request(
         _ token: Base.Target,
         callbackQueue: DispatchQueue? = nil

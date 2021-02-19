@@ -39,7 +39,7 @@ PODS:
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
-  - Moya
+  - Moya (~> 14)
   - Nimble
   - Pure
   - Quick
@@ -97,6 +97,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 3d6b6610d4f83017bed9e1ef01fc61a3f64617a8
+PODFILE CHECKSUM: 79ab21597cecb463a81246bc5ecce0126bb88867
 
 COCOAPODS: 1.10.1
