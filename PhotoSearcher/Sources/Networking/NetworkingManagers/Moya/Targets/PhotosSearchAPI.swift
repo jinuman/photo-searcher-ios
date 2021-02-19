@@ -15,7 +15,8 @@ enum PhotosSearchAPI {
             noJSONCallback: String? = "1",
             perPage: String? = "10",
             sort: String? = "relevance",
-            extras: String? = "url_m"
+            extras: String? = "url_m",
+            keyword: String?
          )
 }
 
@@ -33,7 +34,8 @@ extension PhotosSearchAPI: BaseTargetType {
             format,
             perPage,
             sort,
-            extras
+            extras,
+            keyword
         ):
             return URLEncoding() => [
                 "api_key": apiKey,
@@ -42,7 +44,9 @@ extension PhotosSearchAPI: BaseTargetType {
                 "nojsoncallback": noJSONCallback,
                 "per_page": perPage,
                 "sort": sort,
-                "extras": extras
+                "extras": extras,
+                "text": keyword,
+                "tags": keyword
             ]
         }
     }
