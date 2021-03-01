@@ -7,14 +7,14 @@ use_frameworks!
 platform :ios, '11.0'
 
 # Rx
-pod 'RxSwift', '~> 6', binary: true
+pod 'RxSwift', binary: true
 pod 'RxCocoa', binary: true
 pod 'RxDataSources', binary: true
 pod 'RxGesture', binary: true
 pod 'RxKeyboard', binary: true
 
 # Architecture
-pod 'ReactorKit', '~> 3', binary: true
+pod 'ReactorKit', binary: true
 
 # DI
 pod 'Pure', binary: true
@@ -23,7 +23,7 @@ pod 'Pure', binary: true
 pod 'SnapKit', binary: true
 
 # Networking
-pod 'Moya', '~> 14', binary: true
+pod 'Moya/RxSwift', '~> 14', binary: true
 
 # Resources
 pod 'R.swift', binary: true

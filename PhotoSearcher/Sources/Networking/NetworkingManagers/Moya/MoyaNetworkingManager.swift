@@ -90,9 +90,11 @@ extension Reactive where Base: MoyaNetworkingServiceProtocol {
             ) { result in
                 switch result {
                 case let .success(response):
+                    print(result, "success")
                     single(.success(response))
                 case let .failure(error):
-                    single(.failure(error))
+                    print(result)
+                    single(.error(error))
                 }
             }
             return Disposables.create {

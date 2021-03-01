@@ -9,10 +9,8 @@ import Foundation
 
 struct NetworkingContext {
     static var flickrBaseURL: URL {
-        guard let urlString = Bundle.main.infoDictionary?["API_BASE_URL"] as? String,
-              let url = URL(string: urlString)
-        else {
-            fatalError("FAIL: Load API_BASE_URL in Bundle")
+        guard let url = URL(string: "https://api.flickr.com") else {
+            fatalError("Wrong host URL")
         }
         return url
     }

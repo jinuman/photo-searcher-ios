@@ -69,13 +69,13 @@ struct LegacyFlickrAPI {
 
 //            let jsonString = String(data: data, encoding: .utf8)
 //            print(jsonString!)
-            do {
-                let flickr = try JSONDecoder().decode(Flickr.self, from: data)
-                let photos: [Photo] = flickr.photos.photo
-                completion(photos, nil)
-            } catch let jsonError {
-                print("Failed to decode: ", jsonError.localizedDescription)
-            }
+//            do {
+//                let flickr = try JSONDecoder().decode(Flickr.self, from: data)
+//                let photos: [Photo] = flickr.photos.photo
+//                completion(photos, nil)
+//            } catch let jsonError {
+//                print("Failed to decode: ", jsonError.localizedDescription)
+//            }
         }
         task.resume()
     }

@@ -36,7 +36,9 @@ extension BaseTargetType {
     }
 
     var task: Task {
-        guard let parameters = self.parameters else { return .requestPlain }
+        guard let parameters = self.parameters else {
+            return .requestPlain
+        }
         return .requestParameters(parameters: parameters.values, encoding: parameters.encoding)
     }
 

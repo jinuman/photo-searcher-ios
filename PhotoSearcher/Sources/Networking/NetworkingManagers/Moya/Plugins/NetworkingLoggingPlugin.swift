@@ -13,16 +13,12 @@ struct NetworkingLoggingPlugin: PluginType {
         target _: TargetType
     ) {
         let headers = request.request?.allHTTPHeaderFields ?? [:]
-        let url = request.request?.url?.absoluteString ?? ""
-        let path = url.replacingOccurrences(
-            of: NetworkingContext.flickrBaseURL.absoluteString,
-            with: ""
-        )
+        let urlPath: String = request.request?.url?.absoluteString ?? ""
         let method = request.request?.httpMethod ?? ""
 
         #if DEBUG
             print("\n==================================================")
-            print("➡️ [ \(method) ] \(path)")
+            print("➡️ [ \(method) ] \(urlPath)")
             print("👤 [ Headers ] \(headers)")
             if let body = request.request?.httpBody {
                 let bodyString = String(bytes: body, encoding: String.Encoding.utf8) ?? ""
@@ -44,7 +40,8 @@ struct NetworkingLoggingPlugin: PluginType {
                 print("------------------------------\n")
             case let .failure(error):
                 print("\n==============================")
-                print(error.errorDescription ?? error.localizedDescription)
+
+                print("🚫 ( Error ) \(error.errorDescription ?? error.localizedDescription)")
                 print("------------------------------\n")
             }
         }

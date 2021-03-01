@@ -98,25 +98,25 @@ class LegacyPhotoSearchViewController: UIViewController {
 
         guard let searchUrl = flickrAPI.searchUrl(with: query) else { return }
 
-        flickrAPI.flickrSearch(with: searchUrl) { [weak self] photos, err in
-            if let err = err {
-                print("Failed to fetch flickr data: \(err.localizedDescription)")
-                return
-            }
-            guard
-                let self = self,
-                let photos = photos else { return }
-            // DI
-            self.viewModel = PhotoSearchViewModel(photos: photos)
-
-            DispatchQueue.main.async {
-                self.collectionView.reloadSections(IndexSet(0 ... 0))
-                if !photos.isEmpty {
-                    let indexPath = IndexPath(item: 0, section: 0)
-                    self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
-                }
-            }
-        }
+//        flickrAPI.flickrSearch(with: searchUrl) { [weak self] photos, err in
+//            if let err = err {
+//                print("Failed to fetch flickr data: \(err.localizedDescription)")
+//                return
+//            }
+//            guard
+//                let self = self,
+//                let photos = photos else { return }
+//            // DI
+//            self.viewModel = PhotoSearchViewModel(photos: photos)
+//
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadSections(IndexSet(0 ... 0))
+//                if !photos.isEmpty {
+//                    let indexPath = IndexPath(item: 0, section: 0)
+//                    self.collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
+//                }
+//            }
+//        }
     }
 }
 

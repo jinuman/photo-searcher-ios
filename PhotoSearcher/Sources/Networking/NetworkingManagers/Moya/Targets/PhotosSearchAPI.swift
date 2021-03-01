@@ -30,8 +30,8 @@ extension PhotosSearchAPI: BaseTargetType {
         case let .searchedPhotos(
             apiKey,
             method,
-            noJSONCallback,
             format,
+            noJSONCallback,
             perPage,
             sort,
             extras,
