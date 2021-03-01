@@ -13,9 +13,9 @@ protocol PhotoSearchServiceType {
 
 struct PhotoSearchService: PhotoSearchServiceType {
 
-    private let networkingManager: MoyaNetworkingManager<PhotoSearchAPI>
+    private let networkingManager: NetworkingManager<PhotoSearchAPI>
 
-    init(networkingManager: MoyaNetworkingManager<PhotoSearchAPI>) {
+    init(networkingManager: NetworkingManager<PhotoSearchAPI>) {
         self.networkingManager = networkingManager
     }
 

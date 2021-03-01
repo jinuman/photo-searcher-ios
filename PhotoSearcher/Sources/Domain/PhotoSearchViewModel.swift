@@ -21,7 +21,7 @@ class PhotoSearchViewModel {
 
     init(photos: [Photo] = []) {
         self.photos = photos
-        let networkingManager = MoyaNetworkingManager<PhotoSearchAPI>()
+        let networkingManager = NetworkingManager<PhotoSearchAPI>()
         let service = PhotoSearchService(networkingManager: networkingManager)
         service.fetchPhotos(keyword: nil)
             .subscribe({

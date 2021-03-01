@@ -10,7 +10,7 @@ import Moya
 
 import RxSwift
 
-protocol MoyaNetworkingServiceProtocol {
+protocol NetworkingServiceProtocol {
     associatedtype Target: BaseTargetType
 
     func request(
@@ -21,7 +21,7 @@ protocol MoyaNetworkingServiceProtocol {
     ) -> Cancellable
 }
 
-struct MoyaNetworkingManager<Target: BaseTargetType>: MoyaNetworkingServiceProtocol {
+struct NetworkingManager<Target: BaseTargetType>: NetworkingServiceProtocol {
 
     typealias Provider = MoyaProvider<Target>
     typealias EndpointClosure = Provider.EndpointClosure
@@ -75,9 +75,9 @@ struct MoyaNetworkingManager<Target: BaseTargetType>: MoyaNetworkingServiceProto
     }
 }
 
-extension MoyaNetworkingManager: ReactiveCompatible {}
+extension NetworkingManager: ReactiveCompatible {}
 
-extension Reactive where Base: MoyaNetworkingServiceProtocol {
+extension Reactive where Base: NetworkingServiceProtocol {
     func request(
         _ token: Base.Target,
         callbackQueue: DispatchQueue? = nil
