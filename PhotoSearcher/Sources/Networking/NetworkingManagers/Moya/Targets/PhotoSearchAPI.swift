@@ -7,7 +7,7 @@
 
 import Moya
 
-enum PhotosSearchAPI {
+enum PhotoSearchAPI {
     case searchedPhotos(
             apiKey: String = FlickrConfig.apiKey,
             method: String = "flickr.photos.search",
@@ -20,7 +20,7 @@ enum PhotosSearchAPI {
          )
 }
 
-extension PhotosSearchAPI: BaseTargetType {
+extension PhotoSearchAPI: BaseTargetType {
     var route: Route {
         return .get("/services/rest")
     }
