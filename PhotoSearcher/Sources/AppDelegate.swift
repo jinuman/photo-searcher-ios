@@ -16,12 +16,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var dependency: AppDependency
 
+
     // MARK: Initializing
 
     override private init() {
         self.dependency = CompositionRoot.resolve()
         super.init()
     }
+
 
     // MARK: Methods
 
