@@ -18,6 +18,7 @@ pod 'ReactorKit', binary: true
 
 # DI
 pod 'Pure', binary: true
+pod 'Swinject', binary: true
 
 # UI
 pod 'SnapKit', binary: true
@@ -44,6 +45,10 @@ def testable_target(name)
 end
 
 testable_target 'PhotoSearcher'
+testable_target 'PhotoSearcherFoundation'
+testable_target 'PhotoSearcherUI'
+testable_target 'PhotoSearcherNetworking'
+testable_target 'PhotoSearcherReactive'
 
 config_cocoapods_binary_cache(
   cache_repo: {
