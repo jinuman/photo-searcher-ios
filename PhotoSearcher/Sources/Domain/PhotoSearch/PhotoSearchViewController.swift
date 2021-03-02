@@ -32,7 +32,6 @@ final class PhotoSearchViewController: BaseViewController, View, FactoryModule {
         let textFieldInsideSearchBar = $0.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.backgroundColor = UIColor(r: 240, g: 240, b: 240)
     }
-
     private let collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
@@ -46,6 +45,7 @@ final class PhotoSearchViewController: BaseViewController, View, FactoryModule {
 
     init(dependency: Dependency, payload: Payload) {
         super.init()
+        self.title = "Photo Search"
     }
 
 
