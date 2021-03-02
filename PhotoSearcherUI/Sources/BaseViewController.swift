@@ -41,7 +41,7 @@ open class BaseViewController: UIViewController {
     }
 
     /// Override during subclassing to configure Auto Layout Constraints here.
-    public func configureLayout() {
+    open func configureLayout() {
       // Override Point
     }
 }
