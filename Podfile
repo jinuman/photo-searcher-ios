@@ -19,6 +19,7 @@ pod 'ReactorKit', binary: true
 # DI
 pod 'Pure', binary: true
 pod 'Swinject', binary: true
+pod 'PureSwinject', binary: true
 
 # UI
 pod 'SnapKit', binary: true

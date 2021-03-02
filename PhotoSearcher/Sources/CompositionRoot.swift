@@ -15,12 +15,28 @@ struct AppDependency {
 }
 
 enum CompositionRoot {
+    static var container = Container(defaultObjectScope: .container)
+
     static func resolve() -> AppDependency {
+
         // MARK: Networking
 
         // MARK: Photo Search
 
-        let photoSearchViewController = LegacyPhotoSearchViewController()
+        self.container.autoregister(
+            PhotoSearchViewController.Factory.self,
+            dependency: PhotoSearchViewController.Dependency.init
+        )
+
+        let photoSearchViewReactorFactory = PhotoSearchViewReactor.Factory(
+            dependency: .init()
+        )
+        let photoSearchViewControllerFactory = PhotoSearchViewController.Factory(
+            dependency: .init()
+        )
+        let photoSearchViewController = photoSearchViewControllerFactory.create(payload: .init(
+            reactor: photoSearchViewReactorFactory.create()
+        ))
 
         // MARK: Root View Controller
 

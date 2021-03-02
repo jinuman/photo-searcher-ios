@@ -107,7 +107,9 @@ let project = Project(
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
             sources: ["\(projectName)UI/Sources/**"],
-            dependencies: [],
+            dependencies: [
+                .target(name: "\(projectName)Foundation"),
+            ],
             settings: frameworkTargetSettings
         ),
         Target(
