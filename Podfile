@@ -23,6 +23,7 @@ pod 'PureSwinject', binary: true
 
 # UI
 pod 'SnapKit', binary: true
+pod 'ColorCompatibility', binary: true
 
 # Networking
 pod 'Moya/RxSwift', '~> 14', binary: true

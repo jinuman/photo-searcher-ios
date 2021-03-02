@@ -8,5 +8,6 @@
 @_exported import UIKit
 @_exported import SnapKit
 @_exported import RxCocoa
+@_exported import ColorCompatibility
 
 @_exported import PhotoSearcherFoundation

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - ColorCompatibility (1.1.0)
   - Differentiator (4.0.1)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
@@ -48,6 +49,7 @@ PODS:
   - WeakMapTable (1.2.0)
 
 DEPENDENCIES:
+  - ColorCompatibility
   - Moya/RxSwift (~> 14)
   - Nimble
   - Pure
@@ -68,6 +70,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - ColorCompatibility
     - Differentiator
     - Moya
     - Nimble
@@ -92,6 +95,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  ColorCompatibility: 7257750b5ac742db9c8b593966c6f8e06992149b
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
@@ -114,6 +118,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: 44c30cff17c20758ad6a689260473524b4216ce2
+PODFILE CHECKSUM: a87febf8dff9ced8da10785e35f55ec592927e32
 
 COCOAPODS: 1.10.1
