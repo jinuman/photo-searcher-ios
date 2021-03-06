@@ -19,12 +19,15 @@ pod 'ReactorKit', binary: true
 # DI
 pod 'Pure', binary: true
 pod 'Swinject', binary: true
+pod 'PureSwinject', binary: true
 
 # UI
 pod 'SnapKit', binary: true
+pod 'ColorCompatibility', binary: true
 
 # Networking
 pod 'Moya/RxSwift', '~> 14', binary: true
+pod 'MoyaSugar/RxSwift', binary: true
 
 # Resources
 pod 'R.swift', binary: true
@@ -49,6 +52,11 @@ testable_target 'PhotoSearcherFoundation'
 testable_target 'PhotoSearcherUI'
 testable_target 'PhotoSearcherNetworking'
 testable_target 'PhotoSearcherReactive'
+testable_target 'PhotoSearcherTest' do
+  pod 'Quick', binary: true
+  pod 'Nimble', binary: true
+  pod 'RxTest', binary: true
+end
 
 config_cocoapods_binary_cache(
   cache_repo: {

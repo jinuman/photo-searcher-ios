@@ -5,6 +5,7 @@ disabled_rules:
   - unused_closure_parameter
   - closure_parameter_position
   - missing_docs
+  - force_try
 
 leading_whitespace:
   severity: error
@@ -14,11 +15,11 @@ opt_in_rules:
   - missing_docs
 
 included:
-  - ${TARGET_NAME}
+  - Projects/${TARGET_NAME}
 
 excluded:
   - Pods
-  - ${TARGET_NAME}/Resources/R.generated.swift
+  - Projects/${TARGET_NAME}/Resources/R.generated.swift
 
 analyzer_rules:
   - unused_import

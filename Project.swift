@@ -1,5 +1,7 @@
 import ProjectDescription
 
+let projectName: String = "PhotoSearcher"
+
 let targetActions = [
     TargetAction.pre(
         path: "Scripts/RswiftRunScript.sh",
@@ -7,19 +9,14 @@ let targetActions = [
         name: "R.Swift",
         inputPaths: [Path("$TEMP_DIR/rswift-lastrun")],
         inputFileListPaths: [],
-        outputPaths: [Path("$SRCROOT/PhotoSearcher/Resources/R.generated.swift")],
+        outputPaths: [Path("$SRCROOT/Projects/\(projectName)/Resources/R.generated.swift")],
         outputFileListPaths: []
     ),
     TargetAction.post(
         path: "Scripts/SwiftlintRunScript.sh",
         arguments: [],
         name: "SwiftLint"
-    ),
-//    TargetAction.post(
-//        path: "Scripts/SwiftformatRunScript.sh",
-//        arguments: [],
-//        name: "SwiftFormat"
-//    ),
+    )
 ]
 
 let appTargetSettings = Settings(
@@ -40,8 +37,6 @@ let testsTargetSettings = Settings(
     ]
 )
 
-let projectName: String = "PhotoSearcher"
-
 let project = Project(
     name: "\(projectName)",
     targets: [
@@ -51,9 +46,9 @@ let project = Project(
             product: .app,
             bundleId: "com.jinuman.\(projectName)",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
-            infoPlist: InfoPlist(stringLiteral: "\(projectName)/Supporting Files/\(projectName)-Info.plist"),
-            sources: ["\(projectName)/Sources/**"],
-            resources: ["\(projectName)/Resources/**"],
+            infoPlist: InfoPlist(stringLiteral: "Projects/\(projectName)/Supporting Files/\(projectName)-Info.plist"),
+            sources: ["Projects/\(projectName)/Sources/**"],
+            resources: ["Projects/\(projectName)/Resources/**"],
             actions: targetActions,
             dependencies: [
                 .cocoapods(path: "."),
@@ -70,7 +65,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)Tests",
             infoPlist: .default,
-            sources: ["\(projectName)/Tests/**"],
+            sources: ["Projects/\(projectName)/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)"),
             ],
@@ -83,7 +78,7 @@ let project = Project(
             bundleId: "com.jinuman.\(projectName)Foundation",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
-            sources: ["\(projectName)Foundation/Sources/**"],
+            sources: ["Projects/\(projectName)Foundation/Sources/**"],
             dependencies: [],
             settings: frameworkTargetSettings
         ),
@@ -93,7 +88,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)FoundationTests",
             infoPlist: .default,
-            sources: ["\(projectName)Foundation/Tests/**"],
+            sources: ["Projects/\(projectName)Foundation/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)Foundation"),
             ],
@@ -106,8 +101,10 @@ let project = Project(
             bundleId: "com.jinuman.\(projectName)UI",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
-            sources: ["\(projectName)UI/Sources/**"],
-            dependencies: [],
+            sources: ["Projects/\(projectName)UI/Sources/**"],
+            dependencies: [
+                .target(name: "\(projectName)Foundation"),
+            ],
             settings: frameworkTargetSettings
         ),
         Target(
@@ -116,7 +113,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)UITests",
             infoPlist: .default,
-            sources: ["\(projectName)UI/Tests/**"],
+            sources: ["Projects/\(projectName)UI/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)UI"),
             ],
@@ -129,7 +126,7 @@ let project = Project(
             bundleId: "com.jinuman.\(projectName)Reactive",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
-            sources: ["\(projectName)Reactive/Sources/**"],
+            sources: ["Projects/\(projectName)Reactive/Sources/**"],
             dependencies: [],
             settings: frameworkTargetSettings
         ),
@@ -139,7 +136,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)ReactiveTests",
             infoPlist: .default,
-            sources: ["\(projectName)Reactive/Tests/**"],
+            sources: ["Projects/\(projectName)Reactive/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)Reactive"),
             ],
@@ -152,8 +149,10 @@ let project = Project(
             bundleId: "com.jinuman.\(projectName)Networking",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
-            sources: ["\(projectName)Networking/Sources/**"],
-            dependencies: [],
+            sources: ["Projects/\(projectName)Networking/Sources/**"],
+            dependencies: [
+                .target(name: "\(projectName)Foundation"),
+            ],
             settings: frameworkTargetSettings
         ),
         Target(
@@ -162,7 +161,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)NetworkingTests",
             infoPlist: .default,
-            sources: ["\(projectName)Networking/Tests/**"],
+            sources: ["Projects/\(projectName)Networking/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)Networking"),
             ],
@@ -175,7 +174,7 @@ let project = Project(
             bundleId: "com.jinuman.\(projectName)Test",
             deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
             infoPlist: .default,
-            sources: ["\(projectName)Test/Sources/**"],
+            sources: ["Projects/\(projectName)Test/Sources/**"],
             dependencies: [],
             settings: frameworkTargetSettings
         ),
@@ -185,7 +184,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "com.jinuman.\(projectName)TestTests",
             infoPlist: .default,
-            sources: ["\(projectName)Test/Tests/**"],
+            sources: ["Projects/\(projectName)Test/Tests/**"],
             dependencies: [
                 .target(name: "\(projectName)Test"),
             ],
@@ -193,6 +192,6 @@ let project = Project(
         ),
     ],
     additionalFiles: [
-        "\(projectName)/Resources/R.generated.swift",
+        "Projects/\(projectName)/Resources/R.generated.swift",
     ]
 )
