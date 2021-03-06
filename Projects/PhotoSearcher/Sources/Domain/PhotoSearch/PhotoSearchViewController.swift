@@ -140,7 +140,7 @@ final class PhotoSearchViewController: BaseViewController, View, FactoryModule {
             .asDriver(onErrorJustReturn: ())
             .drive(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.collectionView.scrollToTop()
+                self.collectionView.scrollToTop(animated: false)
             })
             .disposed(by: self.disposeBag)
 
