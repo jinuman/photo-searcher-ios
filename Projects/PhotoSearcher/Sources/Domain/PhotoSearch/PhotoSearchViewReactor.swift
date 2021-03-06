@@ -41,7 +41,8 @@ final class PhotoSearchViewReactor: Reactor, FactoryModule {
 
     private let dependency: Dependency
     let initialState: State
-
+    let shouldScrollToTop: Observable<Void>
+    private let shouldScrollToTopRelay = PublishRelay<Void>()
     private let defaultKeyword: String = "fruit"
 
 
@@ -51,6 +52,9 @@ final class PhotoSearchViewReactor: Reactor, FactoryModule {
         defer { _ = self.state }
         self.dependency = dependency
         self.initialState = State()
+        self.shouldScrollToTop = self.shouldScrollToTopRelay
+            .asObservable()
+            .share(replay: 1, scope: .whileConnected)
     }
 
 
@@ -87,6 +91,10 @@ final class PhotoSearchViewReactor: Reactor, FactoryModule {
         return self.dependency.photoSearchService.fetchPhotos(keyword: keyword)
             .asObservable()
             .map(Mutation.setPhotos)
+            .do(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.shouldScrollToTopRelay.accept(())
+            })
     }
 
     func reduce(state: State, mutation: Mutation) -> State {

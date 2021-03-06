@@ -20,8 +20,9 @@ public extension UIScrollView {
 
     func scrollToTop(animated: Bool = true) {
         let topInset = self.contentInset.top
+        let leftInset = self.contentInset.left
         self.setContentOffset(
-            CGPoint(x: 0, y: -topInset),
+            CGPoint(x: -leftInset, y: -topInset),
             animated: animated
         )
     }

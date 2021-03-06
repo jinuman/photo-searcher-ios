@@ -136,6 +136,14 @@ final class PhotoSearchViewController: BaseViewController, View, FactoryModule {
             .bind(to: self.collectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: self.disposeBag)
 
+        reactor.shouldScrollToTop
+            .asDriver(onErrorJustReturn: ())
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.collectionView.scrollToTop()
+            })
+            .disposed(by: self.disposeBag)
+
         Observable.zip(
             self.collectionView.rx.itemSelected,
             self.collectionView.rx.modelSelected(PhotoSearchViewSection.Item.self))
