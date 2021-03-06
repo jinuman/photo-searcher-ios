@@ -2,11 +2,19 @@ PODS:
   - Alamofire (5.4.1)
   - ColorCompatibility (1.1.0)
   - Differentiator (4.0.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (14.0.0):
     - Moya/Core
     - RxSwift (~> 5.0)
+  - MoyaSugar/Core (1.3.3):
+    - Moya (>= 14.0.0-beta.2)
+  - MoyaSugar/RxSwift (1.3.3):
+    - Moya/RxSwift (>= 14.0.0-beta.2)
+    - MoyaSugar/Core
+    - RxSwift (>= 5.0.0)
   - Nimble (9.0.0)
   - Pure (1.1.4):
     - Pure/Core (= 1.1.4)
@@ -51,6 +59,7 @@ PODS:
 DEPENDENCIES:
   - ColorCompatibility
   - Moya/RxSwift (~> 14)
+  - MoyaSugar/RxSwift
   - Nimble
   - Pure
   - PureSwinject
@@ -73,6 +82,7 @@ SPEC REPOS:
     - ColorCompatibility
     - Differentiator
     - Moya
+    - MoyaSugar
     - Nimble
     - Pure
     - PureSwinject
@@ -98,6 +108,7 @@ SPEC CHECKSUMS:
   ColorCompatibility: 7257750b5ac742db9c8b593966c6f8e06992149b
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  MoyaSugar: 63390c557e038c087dc4bcc8a9f9fda69647ce43
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Pure: 82d6f4438672a41d21ea6fadd126e1466db001c5
   PureSwinject: 0010f4069bd552cdc46a7be7d58481b22ced2fd3
@@ -118,6 +129,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: a87febf8dff9ced8da10785e35f55ec592927e32
+PODFILE CHECKSUM: 0ea9575c8600dff9f4610d36b54f5719c8a6d9d1
 
 COCOAPODS: 1.10.1
