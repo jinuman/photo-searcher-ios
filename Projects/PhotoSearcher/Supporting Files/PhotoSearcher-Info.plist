@@ -44,6 +44,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>사진을 저장하려면 필요한 절차입니다.</string>
+	<string>This is a necessary procedure to save your photos.</string>
 </dict>
 </plist>
