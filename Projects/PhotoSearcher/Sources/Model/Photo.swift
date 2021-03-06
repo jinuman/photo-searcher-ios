@@ -5,8 +5,9 @@
 //  Created by Jinwoo Kim on 2021/02/23.
 //
 
-struct Photo: Decodable, ModelType {
-    let url: String
+import PhotoSearcherFoundation
+
+struct Photo: Decodable, ModelType, Hashable {
     let id: String
     let title: String
     let owner: String
@@ -16,6 +17,7 @@ struct Photo: Decodable, ModelType {
     let isPublic: Int?
     let isFriend: Int?
     let isFamily: Int?
+    let url: String?
     let height: Int?
     let width: Int?
 
@@ -28,5 +30,29 @@ struct Photo: Decodable, ModelType {
         case url = "url_m"
         case height = "height_m"
         case width = "width_m"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        self.id = try container.decode(String.self, forKey: .id)
+        self.title = try container.decode(String.self, forKey: .title)
+        self.owner = try container.decode(String.self, forKey: .owner)
+
+        self.secret = try container.decodeIfPresent(String.self, forKey: .secret)
+        self.server = try container.decodeIfPresent(String.self, forKey: .server)
+        self.farm = try container.decodeIfPresent(Int.self, forKey: .farm)
+        self.isPublic = try container.decodeIfPresent(Int.self, forKey: .isPublic)
+        self.isFriend = try container.decodeIfPresent(Int.self, forKey: .isFriend)
+        self.isFamily = try container.decodeIfPresent(Int.self, forKey: .isFamily)
+        self.url = try container.decodeIfPresent(String.self, forKey: .url)
+        self.height = try container.decodeIfPresent(Int.self, forKey: .height)
+        self.width = try container.decodeIfPresent(Int.self, forKey: .width)
+    }
+}
+
+extension Photo {
+    static var defaultImage: UIImage {
+        return UIImage(named: "image_placeholder")?.withRenderingMode(.alwaysOriginal) ?? .init()
     }
 }
