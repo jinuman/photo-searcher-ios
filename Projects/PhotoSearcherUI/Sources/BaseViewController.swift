@@ -10,13 +10,13 @@ import PhotoSearcherReactive
 /// This `BaseViewController` serves as the parent of every UIViewController we will make.
 open class BaseViewController: UIViewController {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     public lazy var guide = self.view.safeAreaLayoutGuide
     public var disposeBag = DisposeBag()
 
 
-    // MARK: Initializing
+    // MARK: - Initializing
 
     public init() {
         super.init(nibName: nil, bundle: nil)
@@ -33,12 +33,15 @@ open class BaseViewController: UIViewController {
     }
 
 
-    // MARK: View Life Cycle
+    // MARK: - View Life Cycle
 
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.configureLayout()
     }
+
+
+    // MARK: - Layout
 
     /// Override during subclassing to configure Auto Layout Constraints here.
     open func configureLayout() {

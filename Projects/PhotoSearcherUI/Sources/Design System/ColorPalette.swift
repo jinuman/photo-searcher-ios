@@ -36,7 +36,7 @@ public extension ColorPalette {
 }
 
 
-// MARK: iOS 13+ (Dark mode support)
+// MARK: - iOS 13+ (Dark mode support)
 
 public extension ColorPalette {
     static let indigo = ColorCompatibility.systemIndigo
