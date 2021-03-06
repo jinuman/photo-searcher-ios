@@ -5,6 +5,7 @@ disabled_rules:
   - unused_closure_parameter
   - closure_parameter_position
   - missing_docs
+  - force_try
 
 leading_whitespace:
   severity: error
