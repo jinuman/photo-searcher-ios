@@ -14,11 +14,11 @@ opt_in_rules:
   - missing_docs
 
 included:
-  - ${TARGET_NAME}
+  - Projects/${TARGET_NAME}
 
 excluded:
   - Pods
-  - ${TARGET_NAME}/Resources/R.generated.swift
+  - Projects/${TARGET_NAME}/Resources/R.generated.swift
 
 analyzer_rules:
   - unused_import
