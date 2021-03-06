@@ -73,7 +73,6 @@ final class PhotoSearchViewController: BaseViewController, View, FactoryModule {
         let configureCell: ConfigureCell = { dataSource, collectionView, indexPath, sectionItem in
             switch sectionItem {
             case let .photoItem(photo):
-                logger.debugPrint(photo.id, level: .verbose)
                 let cell = collectionView.dequeueReusableCell(
                     cellType: PhotoItemCollectionViewCell.self,
                     for: indexPath
