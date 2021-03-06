@@ -5,24 +5,24 @@
 //  Created by Jinwoo Kim on 2021/03/02.
 //
 
-enum ColorPalette {
-    static let clear = UIColor.clear
-    static let white = UIColor.white
-    static let black = UIColor.black
+public enum ColorPalette {
+    public static let clear = UIColor.clear
+    public static let white = UIColor.white
+    public static let black = UIColor.black
 
-    static let red = UIColor.systemRed
-    static let orange = UIColor.systemOrange
-    static let yellow = UIColor.systemYellow
-    static let green = UIColor.systemGreen
-    static let blue = UIColor.systemBlue
-    static let purple = UIColor.systemPurple
-    static let teal = UIColor.systemTeal
+    public static let red = UIColor.systemRed
+    public static let orange = UIColor.systemOrange
+    public static let yellow = UIColor.systemYellow
+    public static let green = UIColor.systemGreen
+    public static let blue = UIColor.systemBlue
+    public static let purple = UIColor.systemPurple
+    public static let teal = UIColor.systemTeal
 
-    static let lightgray = UIColor.systemGray
+    public static let lightgray = UIColor.systemGray
 }
 
 
-extension ColorPalette {
+public extension ColorPalette {
     static let backgroundGray = UIColor(red: 250, green: 250, blue: 250)
     static let separatorGray = UIColor(red: 250, green: 250, blue: 250)
     static let borderGray = UIColor(red: 250, green: 250, blue: 250)
@@ -38,7 +38,7 @@ extension ColorPalette {
 
 // MARK: iOS 13+ (Dark mode support)
 
-extension ColorPalette {
+public extension ColorPalette {
     static let indigo = ColorCompatibility.systemIndigo
 
     static let gray = ColorCompatibility.systemGray3
