@@ -53,6 +53,6 @@ struct Photo: Decodable, ModelType, Hashable {
 
 extension Photo {
     static var defaultImage: UIImage {
-        return UIImage(named: "image_placeholder")?.withRenderingMode(.alwaysOriginal) ?? .init()
+        return R.image.image_placeholder()?.withRenderingMode(.alwaysOriginal) ?? .init()
     }
 }

@@ -31,7 +31,7 @@ final class PhotoDetailViewController: BaseViewController, View, FactoryModule {
     // MARK: - UI
 
     private let saveButtonItem = UIBarButtonItem(
-        image: UIImage(named: "save_white"),
+        image: R.image.save_white(),
         style: .plain,
         target: nil,
         action: nil
