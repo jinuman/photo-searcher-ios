@@ -18,8 +18,7 @@ This is useful when downloading pictures to the simulator.
 
 | save into Photos | pinch detail image |
 |:-:|:-:|
-| ![save](https://user-images.githubusercontent.com/26243835/110215887-73cc8980-7eef-11eb-9f33-02b31cbd1b62.gif) | ![pinch](https://user-images.githubusercontent.com/26243835/110215889-75964d00-7eef-11eb-9361-d6bb78bb25c7.gif)
- |
+| ![save](https://user-images.githubusercontent.com/26243835/110215887-73cc8980-7eef-11eb-9f33-02b31cbd1b62.gif) | ![pinch](https://user-images.githubusercontent.com/26243835/110215889-75964d00-7eef-11eb-9361-d6bb78bb25c7.gif) |
 
 
 ## Environment
