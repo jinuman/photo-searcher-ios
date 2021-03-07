@@ -7,7 +7,7 @@ Photo Searcher iOS
 
 Search photos with keywords from couple of APIs (e.g.Flickr) and able to save into your Photos application.
 
-This is useful when downloading pictures to the simulator.
+This application is quite simple and useful when downloading pictures to your simulator.
 
 ## Demo
 
