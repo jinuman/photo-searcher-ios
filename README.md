@@ -30,32 +30,39 @@ This application is quite simple and useful when downloading pictures to your si
 - Flickr API
 	- https://www.flickr.com/services/api/
 
-### Optimizations
+### Tools
 
 - [bundler](https://github.com/rubygems/bundler)
 - [tuist](https://github.com/tuist/tuist)
 - [cocoapods-binary-cache](https://github.com/grab/cocoapods-binary-cache)
 
-### 3rd parties
+### Prime Pods that I used
 
-- RxSwift
-- ReactorKit
-- SnapKit
-- Moya
-- Pure and Swinject
-- R.swift
-- Quick and Nimble
+- [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [ReactorKit](https://github.com/ReactorKit/ReactorKit)
+- [SnapKit](https://github.com/SnapKit/SnapKit)
+- [Moya](https://github.com/Moya/Moya)
+- [Pure](https://github.com/devxoul/Pure)
+- [Swinject](https://github.com/Swinject/Swinject)
+- [R.swift](https://github.com/mac-cain13/R.swift)
+- [Quick](https://github.com/Quick/Quick)
+- [Nimble](https://github.com/Quick/Nimble)
+- [MockingKit](https://github.com/danielsaidi/MockingKit)
 
 ## Installation
 
-```
-1. Execute command `make project`
+1. Install [bundler](https://bundler.io/)
+2. `$bundle install`
+3. Install [tuist](https://tuist.io/)
+4. `$make`
 
-2. Build project and put R.generated.swift file into project.
 
-3. Run the application
 ```
+If it doesn't work, please email me or create an issue.
+```
+
 
 ## License
+
 `photo-searcher-ios` is available under the `MIT license`.  
 See the `LICENSE` file for more detail.
