@@ -1,6 +1,9 @@
 import ProjectDescription
 
 let projectName: String = "PhotoSearcher"
+let deploymentTargetVersion: String = "11.0"
+
+// MARK: - Actions
 
 let targetActions = [
     TargetAction.pre(
@@ -18,6 +21,9 @@ let targetActions = [
         name: "SwiftLint"
     )
 ]
+
+
+// MARK: - Settings
 
 let appTargetSettings = Settings(
     base: [
@@ -37,6 +43,9 @@ let testsTargetSettings = Settings(
     ]
 )
 
+
+// MARK: - Project
+
 let project = Project(
     name: "\(projectName)",
     targets: [
@@ -45,7 +54,7 @@ let project = Project(
             platform: .iOS,
             product: .app,
             bundleId: "com.jinuman.\(projectName)",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: InfoPlist(stringLiteral: "Projects/\(projectName)/Supporting Files/\(projectName)-Info.plist"),
             sources: ["Projects/\(projectName)/Sources/**"],
             resources: ["Projects/\(projectName)/Resources/**"],
@@ -76,7 +85,7 @@ let project = Project(
             platform: .iOS,
             product: .framework,
             bundleId: "com.jinuman.\(projectName)Foundation",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: .default,
             sources: ["Projects/\(projectName)Foundation/Sources/**"],
             dependencies: [],
@@ -99,7 +108,7 @@ let project = Project(
             platform: .iOS,
             product: .framework,
             bundleId: "com.jinuman.\(projectName)UI",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: .default,
             sources: ["Projects/\(projectName)UI/Sources/**"],
             dependencies: [
@@ -124,7 +133,7 @@ let project = Project(
             platform: .iOS,
             product: .framework,
             bundleId: "com.jinuman.\(projectName)Reactive",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: .default,
             sources: ["Projects/\(projectName)Reactive/Sources/**"],
             dependencies: [],
@@ -147,7 +156,7 @@ let project = Project(
             platform: .iOS,
             product: .framework,
             bundleId: "com.jinuman.\(projectName)Networking",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: .default,
             sources: ["Projects/\(projectName)Networking/Sources/**"],
             dependencies: [
@@ -172,7 +181,7 @@ let project = Project(
             platform: .iOS,
             product: .framework,
             bundleId: "com.jinuman.\(projectName)Test",
-            deploymentTarget: .iOS(targetVersion: "11.0", devices: .iphone),
+            deploymentTarget: .iOS(targetVersion: deploymentTargetVersion, devices: .iphone),
             infoPlist: .default,
             sources: ["Projects/\(projectName)Test/Sources/**"],
             dependencies: [],
