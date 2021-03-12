@@ -3,7 +3,7 @@ app:
 	make cocoapods
 
 cocoapods:
-	@echo "Make Pods"
+	@echo "Install Pods"
 	@bundle exec pod binary prebuild || bundle exec pod binary prebuild --repo-update
 
 generate:
