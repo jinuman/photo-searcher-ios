@@ -37,6 +37,11 @@ open class BaseViewController: UIViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
+
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+
         self.configureLayout()
     }
 
@@ -48,4 +53,3 @@ open class BaseViewController: UIViewController {
       // Override Point
     }
 }
-
