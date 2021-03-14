@@ -27,8 +27,7 @@ This application is quite simple and useful when downloading pictures to your si
 - Xcode 12
 - Swift 5
 - iOS 11+
-- Flickr API
-	- https://www.flickr.com/services/api/
+- [Flickr API](https://www.flickr.com/services/api/)
 
 ### Tools
 
@@ -36,7 +35,7 @@ This application is quite simple and useful when downloading pictures to your si
 - [tuist](https://github.com/tuist/tuist)
 - [cocoapods-binary-cache](https://github.com/grab/cocoapods-binary-cache)
 
-### Prime Pods that I used
+### Prime Frameworks and Libraries that I used
 
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [ReactorKit](https://github.com/ReactorKit/ReactorKit)
@@ -64,5 +63,5 @@ If it doesn't work, please email me or create an issue.
 
 ## License
 
-`photo-searcher-ios` is available under the `MIT license`.  
+`photo-searcher-ios` is available under the `MIT license`.
 See the `LICENSE` file for more detail.
