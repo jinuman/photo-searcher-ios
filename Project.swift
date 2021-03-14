@@ -29,6 +29,8 @@ let appTargetSettings = Settings(
     base: [
         "ASSETCATALOG_COMPILER_APPICON_NAME": "AppIcon-PhotoSearcher",
         "ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES": "$(inherited)",
+        "FLICKR_API_KEY": "0f18de6414ffd1f343be617041839163",
+        "FLICKR_SECRET": "261749dbff492ef7",
         "FLICKR_BASE_URL": "https://api.flickr.com"
     ]
 )

@@ -50,7 +50,7 @@ extension FlickrAPI: SugarTargetType {
     }
 
     public var baseURL: URL {
-        return NetworkingContext.flickrBaseURL
+        return Self.baseURL
     }
 
     public var headers: [String: String]? {
@@ -66,9 +66,24 @@ extension FlickrAPI: SugarTargetType {
 
 public extension FlickrAPI {
     static var apiKey: String {
-        return "0f18de6414ffd1f343be617041839163"
+        guard let key = Bundle.main.infoDictionary?["FLICKR_API_KEY"] as? String else {
+            fatalError("FAILED: API_KEY")
+        }
+        return key
     }
+
     static var secret: String {
-        return "261749dbff492ef7"
+        guard let secret = Bundle.main.infoDictionary?["FLICKR_SECRET"] as? String else {
+            fatalError("FAILED: SECRET")
+        }
+        return secret
+    }
+
+    static var baseURL: URL {
+        guard let urlString = Bundle.main.infoDictionary?["FLICKR_BASE_URL"] as? String,
+              let url = URL(string: urlString) else {
+            fatalError("FAILED: BASE_URL")
+        }
+        return url
     }
 }
