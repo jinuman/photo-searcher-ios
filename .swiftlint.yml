@@ -6,6 +6,8 @@ disabled_rules:
   - closure_parameter_position
   - missing_docs
   - force_try
+  - todo
+  - colon
 
 leading_whitespace:
   severity: error
