@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/grab/cocoapods-binary-cache.git
-  revision: e755c67547c323b448749db6907006ce09e2df7f
-  tag: 0.1.12
+  revision: 8758c5105b7ebfe528fe7b8e0537022cae1dad46
+  tag: 0.1.13
   specs:
-    cocoapods-binary-cache (0.1.12)
+    cocoapods-binary-cache (0.1.13)
       cocoapods (>= 1.5.0)
       fourflusher (~> 2.0)
       parallel (~> 1.0)
@@ -114,4 +114,4 @@ DEPENDENCIES
   cocoapods-binary-cache!
 
 BUNDLED WITH
-   2.1.4
+   2.2.8
