@@ -35,25 +35,42 @@ This application is quite simple and useful when downloading pictures to your si
 - [tuist](https://github.com/tuist/tuist)
 - [cocoapods-binary-cache](https://github.com/grab/cocoapods-binary-cache)
 
-### Prime Frameworks and Libraries that I used
+### Rx
 
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources)
+
+### Architecture
+
 - [ReactorKit](https://github.com/ReactorKit/ReactorKit)
-- [SnapKit](https://github.com/SnapKit/SnapKit)
-- [Moya](https://github.com/Moya/Moya)
+
+### Dependency Injection
+
 - [Pure](https://github.com/devxoul/Pure)
 - [Swinject](https://github.com/Swinject/Swinject)
-- [R.swift](https://github.com/mac-cain13/R.swift)
+
+### UI
+
+- [SnapKit](https://github.com/SnapKit/SnapKit)
+
+### Networking
+
+- [Moya](https://github.com/Moya/Moya)
+
+### Test
+
 - [Quick](https://github.com/Quick/Quick)
 - [Nimble](https://github.com/Quick/Nimble)
 - [MockingKit](https://github.com/danielsaidi/MockingKit)
 
+
 ## Installation
 
-1. Install [bundler](https://bundler.io/)
-2. `$bundle install`
-3. Install [tuist](https://tuist.io/)
-4. `$make`
+1. `$ git clone repository`
+2. Install [bundler](https://bundler.io/)
+3. `$ bundle install`
+4. Install [tuist](https://tuist.io/)
+5. `$ make`
 
 
 ```
